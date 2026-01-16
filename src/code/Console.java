@@ -1,3 +1,5 @@
+package code;
+
 public class Console {
 
     public void innit(){}

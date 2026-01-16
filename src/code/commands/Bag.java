@@ -1,4 +1,8 @@
-public class Move implements Command {
+package code.commands;
+
+import code.Command;
+
+public class Bag implements Command {
     @Override
     public String execute() {
         return "";

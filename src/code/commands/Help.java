@@ -1,4 +1,8 @@
-public class Suicide implements Command {
+package code.commands;
+
+import code.Command;
+
+public class Help implements Command {
     @Override
     public String execute() {
         return "";

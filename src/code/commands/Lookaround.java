@@ -1,4 +1,8 @@
-public class Help implements Command{
+package code.commands;
+
+import code.Command;
+
+public class Lookaround implements Command {
     @Override
     public String execute() {
         return "";

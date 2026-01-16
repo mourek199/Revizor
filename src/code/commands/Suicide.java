@@ -1,4 +1,8 @@
-public class Psychologist implements Command{
+package code.commands;
+
+import code.Command;
+
+public class Suicide implements Command {
     @Override
     public String execute() {
         return "";

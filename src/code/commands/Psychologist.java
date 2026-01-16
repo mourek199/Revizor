@@ -1,4 +1,8 @@
-public class Bag implements Command{
+package code.commands;
+
+import code.Command;
+
+public class Psychologist implements Command {
     @Override
     public String execute() {
         return "";
