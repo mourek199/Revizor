@@ -1,6 +1,9 @@
 [
   {
-    "name" : "Letnany"
-
+    "name" : "Letnany",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
   }
 ]
