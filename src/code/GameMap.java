@@ -19,8 +19,11 @@ public class GameMap {
 
     @Override
     public String toString() {
-        return "GameMap{" +
-                "locations=" + Arrays.toString(locations) +
-                '}';
+        String locInfo = "";
+        for (int i = 0; i < locations.length; i++) {
+            locInfo += locations[i].toString();
+        }
+        return "The game map consists of: " + locInfo;
+
     }
 }

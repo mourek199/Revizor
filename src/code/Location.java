@@ -6,7 +6,7 @@ public class Location {
     private String name;
     private String welcomeMessage;
     private String description;
-    private int[] passengers;
+    private Passenger[] passengers;
     private int position;
 
     public Location() {
@@ -36,11 +36,11 @@ public class Location {
         this.description = description;
     }
 
-    public int[] getPassengers() {
+    public Passenger[] getPassengers() {
         return passengers;
     }
 
-    public void setPassengers(int[] passengers) {
+    public void setPassengers(Passenger[] passengers) {
         this.passengers = passengers;
     }
 
@@ -54,13 +54,13 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "name='" + name + '\'' +
-                ", welcomeMessage='" + welcomeMessage + '\'' +
-                ", description='" + description + '\'' +
-                ", passengers=" + Arrays.toString(passengers) +
-                ", position=" + position +
-                '}';
+        return  "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
+                "\nlocation name: " + name +
+                "\ndescription: " + description +
+                "\nwelcome message: " + welcomeMessage +
+                "\npresent passengers: " + Arrays.toString(passengers) +
+                "\nposition: " + position +
+                "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
     }
 }
 

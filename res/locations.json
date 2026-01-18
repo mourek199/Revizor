@@ -1,6 +1,83 @@
 [
   {
-    "name" : "Letnany",
+    "name" : "Letňany",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Prosek",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Střížkov",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Ládví",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Kobylisy",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Nádraží Holešovice",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Vltavská",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Florenc",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Hlavní Nádraží",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Muzeum",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "I.P. Pavlova",
+    "welcomeMessage" : "bla",
+    "description" : "blable",
+    "passengers" : [],
+    "position" : 0
+  },
+  {
+    "name" : "Metro",
     "welcomeMessage" : "bla",
     "description" : "blable",
     "passengers" : [],

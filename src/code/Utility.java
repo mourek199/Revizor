@@ -1,4 +1,36 @@
 package code;
 
 public class Utility {
+
+
+    /**
+     * returns ANSI code for colorful console prints based on color name
+     * @param color color name
+     * @return ANSI code for the chosen color
+     */
+    public static String color(String color) {
+        return switch (color.toUpperCase()) {
+            case "BLACK" -> "\u001B[30m";
+            case "RED" -> "\u001B[31m";
+            case "GREEN" -> "\u001B[32m";
+            case "YELLOW" -> "\u001B[33m";
+            case "BLUE" -> "\u001B[34m";
+            case "PURPLE" -> "\u001B[35m";
+            case "CYAN" -> "\u001B[36m";
+            case "WHITE" -> "\u001B[37m";
+            default -> "\u001B[0m";
+        };
+    }
+
+    /**
+     * expanded variant of the method color, that sets the color only for the given string
+     * used for colorful console prints
+     *
+     * @param color color name
+     * @param str string which is colored
+     * @return color code, colorful text and default color code
+     */
+    public static String color(String color, String str) {
+        return color(color) + str + color("default");
+    }
 }
