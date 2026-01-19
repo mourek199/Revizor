@@ -1,5 +1,4 @@
 package code;
-
 import java.util.Arrays;
 
 public class Location {
@@ -54,13 +53,12 @@ public class Location {
 
     @Override
     public String toString() {
-        return  "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
+        return  Utility.color("blue", "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _") +
                 "\nlocation name: " + name +
                 "\ndescription: " + description +
                 "\nwelcome message: " + welcomeMessage +
                 "\npresent passengers: " + Arrays.toString(passengers) +
-                "\nposition: " + position +
-                "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
+                "\nposition: " + position;
     }
 }
 

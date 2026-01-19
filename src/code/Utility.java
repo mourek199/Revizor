@@ -1,8 +1,6 @@
 package code;
 
 public class Utility {
-
-
     /**
      * returns ANSI code for colorful console prints based on color name
      * @param color color name
@@ -20,6 +18,14 @@ public class Utility {
             case "WHITE" -> "\u001B[37m";
             default -> "\u001B[0m";
         };
+    }
+
+    public static void lineSkip(int numberOfLines) {
+        System.out.print("\n".repeat(numberOfLines));
+    }
+
+    public static void line(int lineLength){
+        System.out.println("_".repeat(lineLength));
     }
 
     /**
