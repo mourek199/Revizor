@@ -21,7 +21,7 @@ public class GameMap {
         for (int i = 0; i < locations.length; i++) {
             locInfo += locations[i].toString();
         }
-        return "The game map consists of: " + locInfo + Utility.color("blue", "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
+        return "The game map consists of: " + locInfo + Tools.color("blue", "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
 
     }
 }

@@ -1,8 +1,8 @@
 [
   {
     "name" : "Metro",
-    "welcomeMessage" : "bla",
-    "description" : "blable",
+    "welcomeMessage" : "Ukončete prosím výstup a nástup, dveře se zavírají.",
+    "description" : "blablable",
     "passengers" : [],
     "position" : 0
   },

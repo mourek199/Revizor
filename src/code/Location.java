@@ -53,7 +53,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return  Utility.color("blue", "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _") +
+        return  Tools.color("blue", "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _") +
                 "\nlocation name: " + name +
                 "\ndescription: " + description +
                 "\nwelcome message: " + welcomeMessage +

@@ -1,6 +1,6 @@
 package code;
 
-public class Utility {
+public class Tools {
     /**
      * returns ANSI code for colorful console prints based on color name
      * @param color color name
@@ -24,8 +24,12 @@ public class Utility {
         System.out.print("\n".repeat(numberOfLines));
     }
 
-    public static void line(int lineLength){
-        System.out.println("_".repeat(lineLength));
+    public static String line(int lineLength) {
+        return "_".repeat(lineLength);
+    }
+
+    public static void linePrint(int lineLength){
+        System.out.println(Tools.line(lineLength));
     }
 
     /**
@@ -36,6 +40,7 @@ public class Utility {
      * @param str string which is colored
      * @return color code, colorful text and default color code
      */
+
     public static String color(String color, String str) {
         return color(color) + str + color("default");
     }
