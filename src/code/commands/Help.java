@@ -1,8 +1,6 @@
 package code.commands;
 
-import code.Command;
-
-public class Help implements Command {
+public class Help extends Command {
     @Override
     public String execute() {
         return "";

@@ -12,12 +12,11 @@ public class GameData {
 
     public void loadMap() {
         ObjectMapper mapper = new ObjectMapper();
-        try(InputStream input = new FileInputStream("res/locations.json")) {
+        try(InputStream input = new FileInputStream("res/dataFile.json")) {
             gameMap.setLocations(mapper.readValue(input, Location[].class));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(gameMap.toString());
     }
 
     public GameMap getGameMap() {

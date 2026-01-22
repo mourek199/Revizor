@@ -1,8 +1,6 @@
 package code.commands;
 
-import code.Command;
-
-public class Psychologist implements Command {
+public class Psychologist extends Command {
     @Override
     public String execute() {
         return "";

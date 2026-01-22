@@ -1,6 +1,11 @@
 package code;
 
+import java.util.Scanner;
+
 public class Tools {
+
+    Scanner scTools = new Scanner(System.in);
+
     /**
      * returns ANSI code for colorful console prints based on color name
      * @param color color name
@@ -18,6 +23,16 @@ public class Tools {
             case "WHITE" -> "\u001B[37m";
             default -> "\u001B[0m";
         };
+    }
+
+    public boolean pressEnter(){
+        System.out.print("Pro pokračování stiskni " + color("blue", "Enter"));
+        scTools.nextLine();
+        return true;
+    }
+
+    public static void consoleClear(){
+        lineSkip(70);
     }
 
     public static void lineSkip(int numberOfLines) {

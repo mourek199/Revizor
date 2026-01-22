@@ -1,8 +1,6 @@
 package code.commands;
 
-import code.Command;
-
-public class Suicide implements Command {
+public class Suicide extends Command {
     @Override
     public String execute() {
         return "";

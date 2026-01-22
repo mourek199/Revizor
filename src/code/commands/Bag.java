@@ -1,8 +1,6 @@
 package code.commands;
 
-import code.Command;
-
-public class Bag implements Command {
+public class Bag extends Command {
     @Override
     public String execute() {
         return "";

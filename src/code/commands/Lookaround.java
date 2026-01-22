@@ -1,8 +1,6 @@
 package code.commands;
 
-import code.Command;
-
-public class Lookaround implements Command {
+public class Lookaround extends Command {
     @Override
     public String execute() {
         return "";
