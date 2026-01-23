@@ -6,8 +6,8 @@ public class Revizor {
     private String name;
     private int money;
     private int depression;
-    private int timeElapsed;
-    private int rideTime;
+    private int timeElapsed = 0;
+    private int rideTime = 0;
 
     public Revizor(String name) {
         currentLocation = new Location();
@@ -40,6 +40,7 @@ public class Revizor {
 
     public void setRideTime(int rideTime) {
         this.rideTime = rideTime;
+        timeElapsed = 0;
     }
 
     public void setTimeElapsed(int timeElapsed) {
@@ -47,14 +48,14 @@ public class Revizor {
     }
 
     public boolean isTravelling(){
-        return timeElapsed > 0;
+        return rideTime > 0;
     }
 
-    public void situation(){
+    public String situation(){
         if (isTravelling()){
-            System.out.println("Jedeš na " + Tools.color("blue", headingLocation.getName()) + "(" +(rideTime/100)*timeElapsed+ ")");
-        }else if (!isTravelling()){
-            System.out.println("Nacházíš se na " + Tools.color("blue", currentLocation.getName()));
+            return "Jedeš na " + Tools.color("blue", headingLocation.getName()) + " (" +Math.round(timeElapsed/((double)rideTime/100)) + "%"+ ")";
+        }else {
+            return "Nacházíš se na " + Tools.color("blue", currentLocation.getName());
         }
     }
 

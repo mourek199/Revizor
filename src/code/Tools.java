@@ -47,6 +47,10 @@ public class Tools {
         System.out.println(Tools.line(lineLength));
     }
 
+    public static String unAvailableCommand(){
+        return color("red", "TENTO PŘÍKAZ TEĎ NELZE POUŽÍT");
+    }
+
     /**
      * expanded variant of the method color, that sets the color only for the given string
      * used for colorful console prints

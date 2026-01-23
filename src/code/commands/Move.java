@@ -21,16 +21,16 @@ public class Move extends Command {
 
     @Override
     public String execute() {
-        if (revizor.getTimeElapsed() == 0) {
+        if (!revizor.isTravelling()) {
             try {
                 availableStations();
                 revizor.setHeadingLocation(gameMap.getLocations()[scMove.nextInt()]);
                 scMove.nextLine();
-                revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
+                revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())*2));
                 revizor.setCurrentLocation(gameMap.getLocations()[0]);
                 System.out.println(revizor.getCurrentLocation().getName());
                 Tools.consoleClear();
-                return "Nastoupil jsi do metra a jedeš na " + revizor.getHeadingLocation().getName();
+                return revizor.situation();
 
             } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
                 return Tools.color("red", "ZVOLENÁ STANICE NEEXISTUJE");

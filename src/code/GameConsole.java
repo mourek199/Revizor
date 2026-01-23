@@ -1,7 +1,9 @@
 package code;
 
 import code.commands.Command;
+import code.commands.Lookaround;
 import code.commands.Move;
+import code.commands.Wait;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -24,6 +26,8 @@ public class GameConsole {
 
     public void innit(){
         availableCommands.put("nastup", new Move(revizor, gameData.getGameMap() ));
+        availableCommands.put("cekej", new Wait(revizor, gameData.getGameMap() ));
+        availableCommands.put("Lookaround", new Lookaround());
 
         try {
             gameData.loadMap();
