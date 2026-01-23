@@ -26,7 +26,7 @@ public class Move extends Command {
                 availableStations();
                 revizor.setHeadingLocation(gameMap.getLocations()[scMove.nextInt()]);
                 scMove.nextLine();
-                revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())*2));
+                revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
                 revizor.setCurrentLocation(gameMap.getLocations()[0]);
                 System.out.println(revizor.getCurrentLocation().getName());
                 Tools.consoleClear();
@@ -37,7 +37,7 @@ public class Move extends Command {
             }
         } else {
             Tools.consoleClear();
-            return "NYNÍ NELZE CESTOVAT. VYČKEJ NA PŘÍJEZD DO STANICE";}
+            return Tools.color("red", "NYNÍ NELZE CESTOVAT. VYČKEJ NA PŘÍJEZD DO STANICE");}
     }
 
     public void availableStations(){

@@ -26,6 +26,7 @@ public class GameConsole {
 
     public void innit(){
         availableCommands.put("nastup", new Move(revizor, gameData.getGameMap() ));
+        availableCommands.put("go", new Move(revizor, gameData.getGameMap() ));
         availableCommands.put("cekej", new Wait(revizor, gameData.getGameMap() ));
         availableCommands.put("Lookaround", new Lookaround());
 

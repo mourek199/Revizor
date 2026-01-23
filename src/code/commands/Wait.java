@@ -20,6 +20,7 @@ public class Wait extends Command {
         if (revizor.getCurrentLocation().getName() != null && revizor.getCurrentLocation().getName().equalsIgnoreCase("Metro")){
             Tools.consoleClear();
             shortRest();
+            isArrived();
             System.out.print(revizor.situation());
             return "";
         }
@@ -28,15 +29,20 @@ public class Wait extends Command {
 
     public int finishRide(){
         revizor.setRideTime(0);
-        revizor.isTravelling();
-        return revizor.getRideTime();
+        return revizor.getTimeElapsed();
     }
 
     public int shortRest(){
-        revizor.setTimeElapsed(revizor.getTimeElapsed() + 3);
-        System.out.println(revizor.getTimeElapsed());
-        System.out.println(revizor.getRideTime());
+        revizor.setTimeElapsed(revizor.getTimeElapsed() + 1);
         return revizor.getTimeElapsed();
+    }
+
+    public boolean isArrived(){
+        if (revizor.getTimeElapsed() >= revizor.getRideTime()){
+            revizor.setCurrentLocation(revizor.getHeadingLocation());
+            revizor.setRideTime(0);
+            return true;
+        } else return false;
     }
 
     @Override
