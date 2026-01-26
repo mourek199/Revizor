@@ -34,7 +34,10 @@ public class GameConsole {
         availableCommands.put("čekej", new Wait(revizor, gameMap));
         availableCommands.put("wait", new Wait(revizor, gameMap));
         //endregion
-        availableCommands.put("Lookaround", new Lookaround());
+        availableCommands.put("lookaround", new Lookaround(revizor, gameMap));
+        availableCommands.put("kochat", new Lookaround(revizor, gameMap));
+        availableCommands.put("kochatse", new Lookaround(revizor, gameMap));
+
         availableCommands.put("help", new Help());
 
         try {
@@ -47,7 +50,7 @@ public class GameConsole {
 
     public void execute(){
         System.out.print(">>");
-        String inputCommand = sc.next().toLowerCase();
+        String inputCommand = sc.next().toLowerCase().trim();
         sc.nextLine();
 
         if(availableCommands.containsKey(inputCommand)){

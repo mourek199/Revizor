@@ -30,9 +30,10 @@ public class Move extends Command {
                     scMove.nextLine();
                     revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
                     revizor.setCurrentLocation(gameMap.getLocations()[0]);
-                    System.out.println(revizor.getCurrentLocation().getName());
-                    Tools.consoleClear();
+                }else {
+                    System.out.println(Tools.color("red", "NEMŮŽEŠ CESTOVAT DO LOKACE, VE KTERÉ SE JIŽ NACHÁZÍŠ"));
                 }
+                Tools.consoleClear();
                 return revizor.situation();
 
             } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
