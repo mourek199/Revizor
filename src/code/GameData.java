@@ -8,18 +8,12 @@ import java.io.InputStream;
 
 public class GameData {
 
-    private GameMap gameMap = new GameMap();
-
-    public void loadMap() {
+    public void loadMap(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
         try(InputStream input = new FileInputStream("res/dataFile.json")) {
             gameMap.setLocations(mapper.readValue(input, Location[].class));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public GameMap getGameMap() {
-        return gameMap;
     }
 }

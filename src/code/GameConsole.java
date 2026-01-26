@@ -1,9 +1,6 @@
 package code;
 
-import code.commands.Command;
-import code.commands.Lookaround;
-import code.commands.Move;
-import code.commands.Wait;
+import code.commands.*;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,6 +9,7 @@ public class GameConsole {
 
     private Scanner sc;
     private GameData gameData = new GameData();
+    private GameMap gameMap = new GameMap();
     private Revizor revizor;
     private HashMap<String, Command> availableCommands;
     private boolean shouldExit;
@@ -20,21 +18,31 @@ public class GameConsole {
         shouldExit = false;
         availableCommands = new HashMap<>();
         sc = new Scanner(System.in);
-        revizor = new Revizor("revizorek");
-
+        revizor = new Revizor("R");
     }
 
     public void innit(){
-        availableCommands.put("nastup", new Move(revizor, gameData.getGameMap() ));
-        availableCommands.put("go", new Move(revizor, gameData.getGameMap() ));
-        availableCommands.put("cekej", new Wait(revizor, gameData.getGameMap() ));
+        //region moveCommand
+        availableCommands.put("nastup", new Move(revizor, gameMap));
+        availableCommands.put("go", new Move(revizor, gameMap));
+        availableCommands.put("jdi", new Move(revizor, gameMap));
+        availableCommands.put("bez", new Move(revizor, gameMap));
+        availableCommands.put("běž", new Move(revizor, gameMap));
+        //endregion
+        // region waitCommand
+        availableCommands.put("cekej", new Wait(revizor, gameMap));
+        availableCommands.put("čekej", new Wait(revizor, gameMap));
+        availableCommands.put("wait", new Wait(revizor, gameMap));
+        //endregion
         availableCommands.put("Lookaround", new Lookaround());
+        availableCommands.put("help", new Help());
 
         try {
-            gameData.loadMap();
+            gameData.loadMap(gameMap);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        revizor.setCurrentLocation(gameMap.getLocations()[7]);
     }
 
     public void execute(){

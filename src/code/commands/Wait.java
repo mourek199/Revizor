@@ -9,34 +9,39 @@ import java.util.Scanner;
 public class Wait extends Command {
 
     private Revizor revizor;
-    private GameMap gameMap;
 
     public Wait(Revizor revizor, GameMap gameMap) {
         this.revizor = revizor;
-        this.gameMap = gameMap;
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public String execute() {
         if (revizor.getCurrentLocation().getName() != null && revizor.getCurrentLocation().getName().equalsIgnoreCase("Metro")){
             Tools.consoleClear();
             shortRest();
             isArrived();
-            System.out.print(revizor.situation());
-            return "";
+            return revizor.situation();
         }
         else return Tools.unAvailableCommand();
     }
 
-    public int finishRide(){
-        revizor.setRideTime(0);
-        return revizor.getTimeElapsed();
-    }
-
+    /**
+     * Shortens the ride waiting time by 1 point
+     * @return the time elapsed in the metro (1 larger than before method call)
+     */
     public int shortRest(){
         revizor.setTimeElapsed(revizor.getTimeElapsed() + 1);
         return revizor.getTimeElapsed();
     }
 
+    /**
+     *Checks if player arrived. If so, then sets CurrentLocation to desired location
+     * @return whether the player already arrived to desired location (true/false)
+     */
     public boolean isArrived(){
         if (revizor.getTimeElapsed() >= revizor.getRideTime()){
             revizor.setCurrentLocation(revizor.getHeadingLocation());

@@ -24,12 +24,15 @@ public class Move extends Command {
         if (!revizor.isTravelling()) {
             try {
                 availableStations();
-                revizor.setHeadingLocation(gameMap.getLocations()[scMove.nextInt()]);
-                scMove.nextLine();
-                revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
-                revizor.setCurrentLocation(gameMap.getLocations()[0]);
-                System.out.println(revizor.getCurrentLocation().getName());
-                Tools.consoleClear();
+                int desiredLocation = scMove.nextInt();
+                if (desiredLocation != revizor.getCurrentLocation().getPosition()) {
+                    revizor.setHeadingLocation(gameMap.getLocations()[desiredLocation]);
+                    scMove.nextLine();
+                    revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
+                    revizor.setCurrentLocation(gameMap.getLocations()[0]);
+                    System.out.println(revizor.getCurrentLocation().getName());
+                    Tools.consoleClear();
+                }
                 return revizor.situation();
 
             } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
@@ -43,7 +46,6 @@ public class Move extends Command {
     public void availableStations(){
         //region availableStationsPrint
         Tools.consoleClear();
-        revizor.setCurrentLocation(gameMap.getLocations()[7]);
         Location[] dirLetnany = Arrays.copyOfRange(gameMap.getLocations(), 1, revizor.getCurrentLocation().getPosition());
         Location[] dirIpak = Arrays.copyOfRange(gameMap.getLocations(), revizor.getCurrentLocation().getPosition() + 1, gameMap.getLocations().length);
         System.out.println(Tools.color("red", Tools.line(20)));
