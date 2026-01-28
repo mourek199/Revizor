@@ -12,15 +12,17 @@ public class Revizor {
     private int timeElapsed = 0;
     private int rideTime = 0;
 
-    public Revizor(String name) {
+    public Revizor(String name, GameMap gameMap) {
         currentLocation = new Location();
-        items = new ArrayList();
-        items.add(new Item("bageta", "aleJakobyNe", 1));
-        items.add(new Item("antidepresiva", "noJakobyNeNo", 999));
+        items = new ArrayList<>();
         this.name = name;
     }
 
 
+    public boolean addItem(Item item) {
+        items.add(item);
+        return true;
+    }
 
     public ArrayList<Item> getItems() {
         return items;

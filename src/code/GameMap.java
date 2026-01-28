@@ -1,18 +1,30 @@
 package code;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class GameMap {
     private Location[] locations;
+    private HashMap<String, Item> items;
 
     public GameMap() {
         locations = new Location[12];
+        items = new HashMap<>();
     }
 
     public Location[] getLocations() {
         return locations;
     }
-
     public void setLocations(Location[] locations) {
         this.locations = locations;
+    }
+
+    public HashMap<String, Item> getItems() {
+        return items;
+    }
+
+    public void setItems(HashMap<String, Item> items) {
+        this.items = items;
     }
 
     @Override

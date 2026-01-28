@@ -1,0 +1,16 @@
+[
+  {
+    "name" : "bageta",
+    "description" : "mnam",
+    "cost" : 65,
+    "depressionChange" : -3,
+    "consumable" : true
+  },
+  {
+    "name" : "antidepresiva",
+    "description" : "no nekup to",
+    "cost" : 999,
+    "depressionChange" : -30,
+    "consumable" : true
+  }
+]

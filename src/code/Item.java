@@ -37,4 +37,15 @@ public class Item {
     public boolean isConsumable() {
         return consumable;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                ", depressionChange=" + depressionChange +
+                ", consumable=" + consumable +
+                '}';
+    }
 }

@@ -21,6 +21,7 @@ public class Move extends Command {
 
     @Override
     public String execute() {
+        revizor.addItem(gameMap.getItems().get("bageta"));
         if (!revizor.isTravelling()) {
             try {
                 availableStations();

@@ -26,6 +26,7 @@ public class Bag extends Command {
                 Tools.consoleClear();
                 System.out.println(Tools.color("blue", tempItem.getName()) +" - "+ tempItem.getDescription() + "\n");
                 Tools.pressEnter();
+                Tools.consoleClear();
             } catch (Exception e) {
                 System.out.println(Tools.color("red", "VYBRAL JSI ŠPATNĚ"));
             }
@@ -33,7 +34,6 @@ public class Bag extends Command {
             System.out.println("A sakra... moje brašna je prázdná... achjo... já doufal že tu něco bude...");
             System.out.println(Tools.color("red", Tools.line(100)));
         }
-
 
         return "";
     }

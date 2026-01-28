@@ -3,6 +3,7 @@ package code;
 import code.commands.*;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class GameConsole {
         shouldExit = false;
         availableCommands = new HashMap<>();
         sc = new Scanner(System.in);
-        revizor = new Revizor("R");
+        revizor = new Revizor("R", gameMap);
     }
 
     public void innit(){
@@ -74,6 +75,7 @@ public class GameConsole {
 
         try {
             gameData.loadMap(gameMap);
+            gameData.loadItems(gameMap);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
