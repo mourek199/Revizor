@@ -2,6 +2,7 @@ package code.commands;
 
 import code.GameMap;
 import code.Revizor;
+import code.Tools;
 
 public class Lookaround extends Command {
     Revizor revizor;
@@ -9,8 +10,9 @@ public class Lookaround extends Command {
 
     @Override
     public String execute() {
+        Tools.consoleClear();
         return revizor.getCurrentLocation().getDescription() +
-                "\nKolem tebe se nachází " + gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().length;
+                "\nKolem tebe se nachází " + gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().length + " cestujících.";
     }
 
     public Lookaround(Revizor revizor, GameMap gameMap) {

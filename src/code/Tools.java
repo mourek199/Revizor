@@ -30,6 +30,14 @@ public class Tools {
         sc.nextLine();
     }
 
+    public static String yesNo (){
+        return "(" + color("green", "Y") + "/" + color("red", "N") + ")";
+    }
+
+    public static void invalidInput(){
+        System.out.println(Tools.color("red", "NEPLATNÝ VSTUP, PROSÍM ZKUS TO ZNOVU"));
+    }
+
     public static void consoleClear(){
         lineSkip(70);
     }

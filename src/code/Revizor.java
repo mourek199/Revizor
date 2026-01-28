@@ -3,12 +3,14 @@ package code;
 import java.util.ArrayList;
 
 public class Revizor {
+    private GameMap gameMap;
     private Location currentLocation;
     private Location headingLocation;
     private ArrayList<Item> items;
     private String name;
+    private int capacity = 5;
     private int money = 0;
-    private int depression = Integer.MAX_VALUE;
+    private int depression = 31;
     private int timeElapsed = 0;
     private int rideTime = 0;
 
@@ -16,12 +18,32 @@ public class Revizor {
         currentLocation = new Location();
         items = new ArrayList<>();
         this.name = name;
+        this.gameMap = gameMap;
     }
 
-
     public boolean addItem(Item item) {
-        items.add(item);
-        return true;
+        if (items.size()+1 <= capacity) {
+            items.add(item);
+            return true;
+        }else return false;
+    }
+
+    public boolean removeItem(String itemName) {
+        if (gameMap.getItems().containsKey(itemName) && items.contains(gameMap.getItems().get(itemName))) {
+            items.remove(gameMap.getItems().get(itemName));
+            return true;
+        }else return false;
+    }
+
+    public String consumeItem(String itemName) {
+        if (items.contains(gameMap.getItems().get(itemName))) {
+            depression += gameMap.getItems().get(itemName).getDepressionChange();
+            items.remove(gameMap.getItems().get(itemName));
+            return "mnam";
+        }
+        else return "not mnam";
+
+
     }
 
     public ArrayList<Item> getItems() {

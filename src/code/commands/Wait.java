@@ -46,6 +46,7 @@ public class Wait extends Command {
         if (revizor.getTimeElapsed() >= revizor.getRideTime()){
             revizor.setCurrentLocation(revizor.getHeadingLocation());
             revizor.setRideTime(0);
+            System.out.println(Tools.color("blue", "\""+revizor.getCurrentLocation().getWelcomeMessage()+"\""));
             return true;
         } else return false;
     }

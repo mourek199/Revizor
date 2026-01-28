@@ -1,13 +1,26 @@
 package code.commands;
 
+import code.Revizor;
+
 public class Suicide extends Command {
+
+    private Revizor revizor;
+
     @Override
     public String execute() {
-        return "";
+        if (exit() == true){
+            return "you krilled yourself";
+        } else return "i should listen to DPP policies.";
     }
 
     @Override
     public boolean exit() {
-        return false;
+        if (revizor.getDepression() > 30){
+            return true;
+        } else return false;
+    }
+
+    public Suicide(code.Revizor revizor){
+        this.revizor = revizor;
     }
 }

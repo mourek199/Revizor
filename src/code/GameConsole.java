@@ -49,6 +49,7 @@ public class GameConsole {
         //region helpCommand
         availableCommands.put("help", new Help());
         availableCommands.put("pomoc", new Help());
+        availableCommands.put("heeelp", new Help());
         //endregion
 
         //region Bag
@@ -58,11 +59,15 @@ public class GameConsole {
         //endregion
 
         //region suicide
-        availableCommands.put("skok", new Suicide());
+        availableCommands.put("skok", new Suicide(revizor));
         //endregion
 
         //region psychologist
         availableCommands.put("psycholog", new Psychologist(revizor));
+        availableCommands.put("psychologist", new Psychologist(revizor));
+        availableCommands.put("psycho", new Psychologist(revizor));
+        availableCommands.put("shrink", new Psychologist(revizor));
+        availableCommands.put("deprese", new Psychologist(revizor));
         //endregion
         //endregion
 

@@ -10,14 +10,6 @@ public class Item {
     public Item() {
     }
 
-    public Item(String name, String description, int cost) {
-        this.name = name;
-        this.description = description;
-        this.cost = cost;
-        this.consumable = false;
-        this.depressionChange = 0;
-    }
-
     public String getName() {
         return name;
     }

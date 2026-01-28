@@ -3,6 +3,7 @@ package code.commands;
 import code.Revizor;
 import code.Tools;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Bag extends Command {
@@ -10,40 +11,68 @@ public class Bag extends Command {
     Revizor revizor;
     Scanner sc = new Scanner(System.in);
 
+    public Bag(code.Revizor revizor) {
+        this.revizor = revizor;
+    }
+
     @Override
     public String execute() {
         Tools.consoleClear();
         System.out.println(Tools.color("red", Tools.line(100)));
-        if(!revizor.getItems().isEmpty()) {
+        if (!revizor.getItems().isEmpty()) {
             System.out.println("Ve tvé revizorské brašně se nachází tyto předměty:");
             for (int i = 0; i < revizor.getItems().size(); i++) {
-                System.out.println("  " + (i+1) +") " + revizor.getItems().get(i).getName());
+                System.out.println("  " + (i + 1) + ") " + revizor.getItems().get(i).getName());
             }
             System.out.println(Tools.color("red", Tools.line(100)));
-            System.out.println("Chceš-li se dozvědět více o daném předmětu, zadej jeho číslo:");
-            try {
-                code.Item tempItem = revizor.getItems().get(sc.nextInt()-1);
-                Tools.consoleClear();
-                System.out.println(Tools.color("blue", tempItem.getName()) +" - "+ tempItem.getDescription() + "\n");
-                Tools.pressEnter();
-                Tools.consoleClear();
-            } catch (Exception e) {
-                System.out.println(Tools.color("red", "VYBRAL JSI ŠPATNĚ"));
+            System.out.println("Chceš-li se dozvědět více o daném předmětu, či předmět použít, zadej jeho číslo: ");
+            code.Item tempItem = new code.Item();
+            boolean answered1 = false;
+            while (!answered1) {
+                try {
+                    tempItem = revizor.getItems().get(sc.nextInt() - 1);
+                    answered1 = true;
+                } catch (InputMismatchException | IndexOutOfBoundsException e) {
+                    Tools.invalidInput();
+                    sc.nextLine();
+                }
             }
-        }else {
+
+            Tools.consoleClear();
+            System.out.println(Tools.color("blue", tempItem.getName()) + " - " + tempItem.getDescription() + "\n");
+            if (tempItem.isConsumable()){
+                System.out.println("Tento předmět vypadá, že se dá sníst. \nPřeješ si sníst " + Tools.color("blue", tempItem.getName()) + " ?" + Tools.yesNo());
+                boolean answered2 = false;
+                String input = sc.next();
+                while (!answered2) {
+                    if (input.equalsIgnoreCase("Y")) {
+                        revizor.consumeItem(tempItem.getName());
+                        answered2 = true;
+                    } else if (input.equalsIgnoreCase("N")) {
+                        Tools.consoleClear();
+                        System.out.println("Rozhodl jsi se předmět nekonzumovat");
+                        answered2 = true;
+                    } else {
+                        Tools.invalidInput();
+                    }
+                }
+            }
+            Tools.pressEnter();
+            Tools.consoleClear();
+            System.out.println("Zavřel jsi zip od své brašny a zase se věnuješ okolnímu světu.");
+            Tools.pressEnter();
+
+        } else {
             System.out.println("A sakra... moje brašna je prázdná... achjo... já doufal že tu něco bude...");
             System.out.println(Tools.color("red", Tools.line(100)));
+            Tools.pressEnter();
         }
-
+        Tools.consoleClear();
         return "";
     }
 
     @Override
     public boolean exit() {
         return false;
-    }
-
-    public Bag(code.Revizor revizor) {
-        this.revizor = revizor;
     }
 }

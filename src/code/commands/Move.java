@@ -6,6 +6,7 @@ import code.Revizor;
 import code.Tools;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Move extends Command {
@@ -23,9 +24,19 @@ public class Move extends Command {
     public String execute() {
         revizor.addItem(gameMap.getItems().get("bageta"));
         if (!revizor.isTravelling()) {
-            try {
+            int desiredLocation = 0;
+            boolean answered = false;
                 availableStations();
-                int desiredLocation = scMove.nextInt();
+                while (!answered) {
+                    try{
+                        desiredLocation = scMove.nextInt();
+                        answered = true;
+                    }catch (InputMismatchException e){
+                        Tools.invalidInput();
+                        scMove.nextLine();
+                    }
+                }
+
                 if (desiredLocation != revizor.getCurrentLocation().getPosition()) {
                     revizor.setHeadingLocation(gameMap.getLocations()[desiredLocation]);
                     scMove.nextLine();
@@ -37,10 +48,8 @@ public class Move extends Command {
                 Tools.consoleClear();
                 return revizor.situation();
 
-            } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-                return Tools.color("red", "ZVOLENÁ STANICE NEEXISTUJE");
-            }
-        } else {
+
+            } else {
             Tools.consoleClear();
             return Tools.color("red", "NYNÍ NELZE CESTOVAT. VYČKEJ NA PŘÍJEZD DO STANICE");}
     }
