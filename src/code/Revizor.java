@@ -1,21 +1,49 @@
 package code;
 
+import java.util.ArrayList;
+
 public class Revizor {
     private Location currentLocation;
     private Location headingLocation;
+    private ArrayList<Item> items;
     private String name;
-    private int money;
-    private int depression;
+    private int money = 0;
+    private int depression = Integer.MAX_VALUE;
     private int timeElapsed = 0;
     private int rideTime = 0;
 
     public Revizor(String name) {
         currentLocation = new Location();
+        items = new ArrayList();
+        items.add(new Item("bageta", "aleJakobyNe", 1));
+        items.add(new Item("antidepresiva", "noJakobyNeNo", 999));
         this.name = name;
+    }
+
+
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
     public Location getCurrentLocation() {
         return currentLocation;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public int getDepression() {
+        return depression;
+    }
+
+    public void setDepression(int depression) {
+        this.depression = depression;
     }
 
     public void setCurrentLocation(Location currentLocation) {

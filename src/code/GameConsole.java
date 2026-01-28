@@ -2,6 +2,7 @@ package code;
 
 import code.commands.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -22,23 +23,54 @@ public class GameConsole {
     }
 
     public void innit(){
+        //region commandInnit
         //region moveCommand
         availableCommands.put("nastup", new Move(revizor, gameMap));
         availableCommands.put("go", new Move(revizor, gameMap));
         availableCommands.put("jdi", new Move(revizor, gameMap));
         availableCommands.put("bez", new Move(revizor, gameMap));
         availableCommands.put("běž", new Move(revizor, gameMap));
+        availableCommands.put("move", new Move(revizor, gameMap));
         //endregion
+
         // region waitCommand
         availableCommands.put("cekej", new Wait(revizor, gameMap));
         availableCommands.put("čekej", new Wait(revizor, gameMap));
         availableCommands.put("wait", new Wait(revizor, gameMap));
         //endregion
+
+        //region lookaroundCommand
         availableCommands.put("lookaround", new Lookaround(revizor, gameMap));
         availableCommands.put("kochat", new Lookaround(revizor, gameMap));
         availableCommands.put("kochatse", new Lookaround(revizor, gameMap));
+        //endregion
 
+        //region helpCommand
         availableCommands.put("help", new Help());
+        availableCommands.put("pomoc", new Help());
+        //endregion
+
+        //region Bag
+        availableCommands.put("batoh", new Bag(revizor));
+        availableCommands.put("bag", new Bag(revizor));
+        availableCommands.put("inventory", new Bag(revizor));
+        //endregion
+
+        //region suicide
+        availableCommands.put("skok", new Suicide());
+        //endregion
+
+        //region psychologist
+        availableCommands.put("psycholog", new Psychologist(revizor));
+        //endregion
+        //endregion
+
+        try {
+            System.out.println(gameData.loadManNames());
+            System.out.println(gameData.loadManLastNames());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         try {
             gameData.loadMap(gameMap);

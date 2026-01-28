@@ -13,10 +13,13 @@ public class Help extends Command {
 
         return Tools.color("red", Tools.line(50))+
                 "\nDostupné příkazy:" +
-                "\n•help -> ukáže dostupné příkazy" +
-                "\n•lookaround -> sdělí informace o aktualním prostředí"+
-                "\n•cekej -> urychluje cestu metrem (nelze použít na stanici)" +
-                "\n•jdi -> nastoupí z aktuální stanice do soupravy metra" +
+                "\n  •help -> ukáže dostupné příkazy" +
+                "\n  •lookaround -> sdělí informace o aktualním prostředí"+
+                "\n  •cekej -> urychluje cestu metrem (nelze použít na stanici)" +
+                "\n  •jdi -> nastoupí z aktuální stanice do soupravy metra" +
+                "\n  •batoh -> zobrazí inventář" +
+                "\n  •skok -> pokus o sebevraždu" +
+                "\n  •psycholog -> sdělí aktualní informace o duševním zdraví revizora" +
                 "\n"+Tools.color("red", Tools.line(50));
     }
 

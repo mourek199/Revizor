@@ -2,11 +2,12 @@ package code;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.ArrayList;
 
 public class GameData {
+
+
 
     public void loadMap(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
@@ -17,8 +18,23 @@ public class GameData {
         }
     }
 
+    public ArrayList<String> loadManNames() throws IOException {
+        ArrayList<String> loadedManNames = new ArrayList<>();
+        String currentLine = "";
+        BufferedReader br = new BufferedReader(new FileReader("res/ManNames.txt"));
+        while((currentLine = br.readLine()) != null) {
+            loadedManNames.add(currentLine);
+        }
+        return loadedManNames;
+    }
 
-    public PassengerBuilder loadNames(PassengerBuilder passengerBuilder){
-        passengerBuilder.
+    public ArrayList<String> loadManLastNames() throws IOException {
+        ArrayList<String> loadedManLastNames = new ArrayList<>();
+        String currentLine = "";
+        BufferedReader br = new BufferedReader(new FileReader("res/ManLastnames.txt"));
+        while((currentLine = br.readLine()) != null) {
+            loadedManLastNames.add(currentLine);
+        }
+        return loadedManLastNames;
     }
 }

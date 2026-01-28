@@ -49,18 +49,18 @@ public class Move extends Command {
         Tools.consoleClear();
         Location[] dirLetnany = Arrays.copyOfRange(gameMap.getLocations(), 1, revizor.getCurrentLocation().getPosition());
         Location[] dirIpak = Arrays.copyOfRange(gameMap.getLocations(), revizor.getCurrentLocation().getPosition() + 1, gameMap.getLocations().length);
-        System.out.println(Tools.color("red", Tools.line(20)));
+        System.out.println(Tools.color("red", Tools.line(100)));
         for (int i = 0; i < dirLetnany.length; i++) {
             System.out.print(dirLetnany[i].getPosition() + ") " + dirLetnany[i].getName() + "\n");
         }
         System.out.println(Tools.color("red", "^^^"));
-        System.out.println(revizor.getCurrentLocation().getPosition() + ") " + revizor.getCurrentLocation().getName() + " (Zde stojíte)");
+        System.out.println(revizor.getCurrentLocation().getPosition() + ") " + revizor.getCurrentLocation().getName() + " ("+Tools.color("red", "Zde stojíte") + ")");
 
         System.out.println(Tools.color("red", "VVV"));
         for (int i = 0; i < dirIpak.length; i++) {
             System.out.print(dirIpak[i].getPosition() + ") " + dirIpak[i].getName() + "\n");
         }
-        System.out.println(Tools.color("red", Tools.line(20)));
+        System.out.println(Tools.color("red", Tools.line(100)));
         System.out.println("Vyber si stanici, na kterou chceš cestovat (číslo) : ");
         //endregion
     }

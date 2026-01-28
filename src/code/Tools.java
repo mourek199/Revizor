@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Tools {
 
-    Scanner scTools = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     /**
      * returns ANSI code for colorful console prints based on color name
@@ -25,10 +25,9 @@ public class Tools {
         };
     }
 
-    public boolean pressEnter(){
+    public static void pressEnter(){
         System.out.print("Pro pokračování stiskni " + color("blue", "Enter"));
-        scTools.nextLine();
-        return true;
+        sc.nextLine();
     }
 
     public static void consoleClear(){
@@ -48,6 +47,7 @@ public class Tools {
     }
 
     public static String unAvailableCommand(){
+        consoleClear();
         return color("red", "TENTO PŘÍKAZ TEĎ NELZE POUŽÍT");
     }
 
