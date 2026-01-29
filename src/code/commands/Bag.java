@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Bag extends Command {
 
-    Revizor revizor;
+    private Revizor revizor;
     Scanner sc = new Scanner(System.in);
 
     public Bag(code.Revizor revizor) {
@@ -45,8 +45,9 @@ public class Bag extends Command {
                 boolean answered2 = false;
                 String input = sc.next();
                 while (!answered2) {
-                    if (input.equalsIgnoreCase("Y")) {
-                        revizor.consumeItem(tempItem.getName());
+                    if (input.equalsIgnoreCase("A")) {
+                        Tools.consoleClear();
+                        System.out.println(revizor.consumeItem(tempItem.getName()));
                         answered2 = true;
                     } else if (input.equalsIgnoreCase("N")) {
                         Tools.consoleClear();

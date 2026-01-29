@@ -1,7 +1,8 @@
 [
   {
     "name" : "bageta",
-    "description" : "mnam",
+    "description" : "",
+    "consumeMessage" : "mnaaam",
     "cost" : 65,
     "depressionChange" : -3,
     "consumable" : true
@@ -9,6 +10,7 @@
   {
     "name" : "antidepresiva",
     "description" : "no nekup to",
+    "consumeMessage" : "mnaaam",
     "cost" : 999,
     "depressionChange" : -30,
     "consumable" : true

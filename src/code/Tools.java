@@ -31,7 +31,7 @@ public class Tools {
     }
 
     public static String yesNo (){
-        return "(" + color("green", "Y") + "/" + color("red", "N") + ")";
+        return "(" + color("green", "A") + "/" + color("red", "N") + ")";
     }
 
     public static void invalidInput(){

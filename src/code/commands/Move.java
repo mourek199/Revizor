@@ -10,9 +10,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Move extends Command {
-    Revizor revizor;
-    GameMap gameMap;
-    Scanner scMove;
+    private Revizor revizor;
+    private GameMap gameMap;
+    private Scanner scMove;
 
     public Move(Revizor revizor, GameMap gameMap) {
         scMove = new Scanner(System.in);
@@ -42,10 +42,11 @@ public class Move extends Command {
                     scMove.nextLine();
                     revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
                     revizor.setCurrentLocation(gameMap.getLocations()[0]);
-                }else {
-                    System.out.println(Tools.color("red", "NEMŮŽEŠ CESTOVAT DO LOKACE, VE KTERÉ SE JIŽ NACHÁZÍŠ"));
                 }
                 Tools.consoleClear();
+                if (revizor.isTravelling()) {
+                    System.out.println(Tools.color("blue", "\"" + revizor.getCurrentLocation().getWelcomeMessage() + "\""));
+                }
                 return revizor.situation();
 
 

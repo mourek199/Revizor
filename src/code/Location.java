@@ -1,14 +1,24 @@
 package code;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Location {
     private String name;
     private String welcomeMessage;
     private String description;
+    private ArrayList<String> npcsPresent;
     private Passenger[] passengers;
     private int position;
 
     public Location() {
+    }
+
+    public ArrayList<String> getNpcsPresent() {
+        return npcsPresent;
+    }
+
+    public void setNpcsPresent(ArrayList<String> npcsPresent) {
+        this.npcsPresent = npcsPresent;
     }
 
     public String getName() {

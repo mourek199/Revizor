@@ -6,10 +6,12 @@ import java.util.HashMap;
 public class GameMap {
     private Location[] locations;
     private HashMap<String, Item> items;
+    private ArrayList<Npc> npcs;
 
     public GameMap() {
         locations = new Location[12];
         items = new HashMap<>();
+        npcs = new ArrayList<>();
     }
 
     public Location[] getLocations() {
@@ -25,6 +27,14 @@ public class GameMap {
 
     public void setItems(HashMap<String, Item> items) {
         this.items = items;
+    }
+
+    public void setNpcs(ArrayList<Npc> npcs) {
+        this.npcs = npcs;
+    }
+
+    public ArrayList<Npc> getNpcs() {
+        return npcs;
     }
 
     @Override

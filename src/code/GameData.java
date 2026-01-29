@@ -17,6 +17,18 @@ public class GameData {
         }
     }
 
+    public void loadNpcs(GameMap gameMap) {
+        ObjectMapper mapper = new ObjectMapper();
+        try(InputStream input = new FileInputStream("res/dataNpcs.json")) {
+            Npc[] npcs = mapper.readValue(input, Npc[].class);
+            for(Npc npc : npcs) {
+                gameMap.getNpcs().add(npc);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void loadItems(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
         try(InputStream input = new FileInputStream("res/dataItems.json")) {

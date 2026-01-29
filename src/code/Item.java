@@ -3,6 +3,7 @@ package code;
 public class Item {
     private String name;
     private String description;
+    private String consumeMessage;
     private int cost;
     private int depressionChange;
     private boolean consumable;
@@ -26,6 +27,10 @@ public class Item {
         return depressionChange;
     }
 
+    public String getConsumeMessage() {
+        return consumeMessage;
+    }
+
     public boolean isConsumable() {
         return consumable;
     }
@@ -38,6 +43,7 @@ public class Item {
                 ", cost=" + cost +
                 ", depressionChange=" + depressionChange +
                 ", consumable=" + consumable +
+                ", name='" + consumeMessage + '\'' +
                 '}';
     }
 }

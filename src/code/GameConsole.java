@@ -81,6 +81,7 @@ public class GameConsole {
         try {
             gameData.loadMap(gameMap);
             gameData.loadItems(gameMap);
+            gameData.loadNpcs(gameMap);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

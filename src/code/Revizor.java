@@ -39,11 +39,9 @@ public class Revizor {
         if (items.contains(gameMap.getItems().get(itemName))) {
             depression += gameMap.getItems().get(itemName).getDepressionChange();
             items.remove(gameMap.getItems().get(itemName));
-            return "mnam";
+            return "Použil jsi/sežral " + Tools.color("blue", itemName);
         }
         else return "not mnam";
-
-
     }
 
     public ArrayList<Item> getItems() {

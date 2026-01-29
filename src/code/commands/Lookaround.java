@@ -5,8 +5,8 @@ import code.Revizor;
 import code.Tools;
 
 public class Lookaround extends Command {
-    Revizor revizor;
-    GameMap gameMap;
+    private Revizor revizor;
+    private GameMap gameMap;
 
     @Override
     public String execute() {

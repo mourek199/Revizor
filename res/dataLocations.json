@@ -4,6 +4,7 @@
     "welcomeMessage" : "Ukončete prosím výstup a nástup, dveře se zavírají.",
     "description" : "blablable",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 0
   },
   {
@@ -11,6 +12,7 @@
     "welcomeMessage" : "Letňany, konečná stanice, prosíme, vystupte.",
     "description" : "Koukneš kolem sebe. Soustředíš se a náhle zaslechneš hluboký harmonický zvuk...\n Chvíli přemýšlíš co je to zač.. je to vrtačka? Ne.. Je to průvan? Premejslíš dál a dojde ti to...\n LETADLA!\n Vzpomeneš si že v letňanech mají letiště. Někdy by sis mohl po práci zalítat.\n",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 1
   },
   {
@@ -18,6 +20,7 @@
     "welcomeMessage" : "Prosek, vystupujte vpravo ve směru jízdy.",
     "description" : "Kocháš se stanicí...\n Hrmm.. je to tu pěkné. Zaráží tě stěny v barvách vlajky Estonska...\n Jak pěkné...",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 2
   },
   {
@@ -25,6 +28,7 @@
     "welcomeMessage" : "Střížkov, vystupujte vpravo ve směru jízdy.",
     "description" : "Podíváš se kolem sebe... malebná stanice s prosklenou střechou a kolejemi uprostřed.\n Líbilo by se ti tu, ale odrážející sluníčko ti vypaluje zorničky.\n Zaujmou tě uschlé vysející liány, které se spouštějí z vrchní části stanice... Vypadají že kdysi musely být krásné.\n",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 3
   },
   {
@@ -32,6 +36,7 @@
     "welcomeMessage" : "Ládví.",
     "description" : "Láááááádvííííííí",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 4
   },
   {
@@ -39,6 +44,7 @@
     "welcomeMessage" : "Kobylisy.",
     "description" : "Rozhlížim se... Co to k čertu je?! To je nějakej hangár??\n Upřu svůj pohled směrem vzhůru a sem fascinován rozměrným zaobleným stropem.\n Tahle žlutobílá stanice připomíná gigantickou plechovku.\n",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 5
   },
   {
@@ -46,6 +52,7 @@
     "welcomeMessage" : "Nádraží Holešovice.",
     "description" : "Náááádraží Holešoviceeeee",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 6
   },
   {
@@ -53,6 +60,7 @@
     "welcomeMessage" : "Vltavská.",
     "description" : "Tak sem na tý slavný Vltavský.. wow.. A kde je jako ta Vltava?! Sem zklamanej...",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 7
   },
   {
@@ -60,6 +68,7 @@
     "welcomeMessage" : "Florenc, přestupní stanice.",
     "description" : "Porozhlédneš se po nástupušti a spatříš velikou žlutou svítivou cedulku s nápisem \"B\"\n ... Přemýšlíš co to asi znamená, ale tvoje blbá hlava revizorská tuto ceduli nechápe.",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 8
   },
   {
@@ -67,6 +76,7 @@
     "welcomeMessage" : "Hlavní Nádraží.",
     "description" : "Hlavák.. nevíš čím to je, ale zabolí tě hlava.\n",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 9
   },
   {
@@ -74,6 +84,7 @@
     "welcomeMessage" : "Muzeum, přestupní stanice.",
     "description" : "Muzeuuuuum",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 10
   },
   {
@@ -81,6 +92,7 @@
     "welcomeMessage" : "I. P. Pavlova, konečná stanice, prosíme vystupte.",
     "description" : "Podíváš se kolem sebe.. vzpomínáš si jak jsi z ípáku chodil do školy...\n",
     "passengers" : [],
+    "npcsPresent" : [],
     "position" : 11
   }
 ]
