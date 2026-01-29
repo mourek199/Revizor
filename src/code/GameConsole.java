@@ -52,22 +52,25 @@ public class GameConsole {
         availableCommands.put("heeelp", new Help());
         //endregion
 
-        //region Bag
+        //region bagCommand
         availableCommands.put("batoh", new Bag(revizor));
         availableCommands.put("bag", new Bag(revizor));
         availableCommands.put("inventory", new Bag(revizor));
         //endregion
 
-        //region suicide
+        //region suicideCommand
         availableCommands.put("skok", new Suicide(revizor));
         //endregion
 
-        //region psychologist
+        //region psychologistCommand
         availableCommands.put("psycholog", new Psychologist(revizor));
         availableCommands.put("psychologist", new Psychologist(revizor));
         availableCommands.put("psycho", new Psychologist(revizor));
         availableCommands.put("shrink", new Psychologist(revizor));
         availableCommands.put("deprese", new Psychologist(revizor));
+        //endregion
+        //region talkCommand
+        availableCommands.put("talk", new Talk(revizor, gameMap));
         //endregion
         //endregion
 

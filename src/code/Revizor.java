@@ -7,6 +7,7 @@ public class Revizor {
     private Location currentLocation;
     private Location headingLocation;
     private ArrayList<Item> items;
+    private Npc activeNpc;
     private String name;
     private int capacity = 5;
     private int money = 0;
@@ -41,7 +42,15 @@ public class Revizor {
             items.remove(gameMap.getItems().get(itemName));
             return "Použil jsi/sežral " + Tools.color("blue", itemName);
         }
-        else return "not mnam";
+        else return "Nebudu to jíst.";
+    }
+
+    public Npc getActiveNpc() {
+        return activeNpc;
+    }
+
+    public void setActiveNpc(Npc activeNpc) {
+        this.activeNpc = activeNpc;
     }
 
     public ArrayList<Item> getItems() {

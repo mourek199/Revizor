@@ -19,7 +19,7 @@ public class Suicide extends Command {
 
     @Override
     public boolean exit() {
-        if (revizor.getDepression() > 30){
+        if (revizor.getDepression() > 30 && !revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
             return true;
         } else return false;
     }

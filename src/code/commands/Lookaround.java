@@ -3,6 +3,7 @@ package code.commands;
 import code.GameMap;
 import code.Revizor;
 import code.Tools;
+import org.w3c.dom.ls.LSOutput;
 
 public class Lookaround extends Command {
     private Revizor revizor;
@@ -11,8 +12,15 @@ public class Lookaround extends Command {
     @Override
     public String execute() {
         Tools.consoleClear();
-        return revizor.getCurrentLocation().getDescription() +
-                "\nKolem tebe se nachází " + gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().length + " cestujících.";
+        System.out.println(revizor.getCurrentLocation().getDescription());
+        System.out.println("\n•Kolem tebe se nachází " + Tools.color("blue", String.valueOf(Integer.valueOf(gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().length))) + " cestujících.");
+        if (revizor.getCurrentLocation().getNpcsPresent().size() > 0) {
+            System.out.println("•V této lokaci se nachází další postavy: " + "\n");
+            for (int i = 0; i < revizor.getCurrentLocation().getNpcsPresent().size(); i++) {
+                System.out.println("•" + Tools.color("blue", revizor.getCurrentLocation().getNpcsPresent().get(i)) + " - " + gameMap.getNpcs().get(revizor.getCurrentLocation().getNpcsPresent().get(i)).getDescription());
+            }
+        }
+        return "";
     }
 
     public Lookaround(Revizor revizor, GameMap gameMap) {

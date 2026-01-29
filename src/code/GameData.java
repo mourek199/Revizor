@@ -22,7 +22,7 @@ public class GameData {
         try(InputStream input = new FileInputStream("res/dataNpcs.json")) {
             Npc[] npcs = mapper.readValue(input, Npc[].class);
             for(Npc npc : npcs) {
-                gameMap.getNpcs().add(npc);
+                gameMap.getNpcs().put(npc.getName(), npc);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

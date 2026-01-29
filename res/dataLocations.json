@@ -60,7 +60,7 @@
     "welcomeMessage" : "Vltavská.",
     "description" : "Tak sem na tý slavný Vltavský.. wow.. A kde je jako ta Vltava?! Sem zklamanej...",
     "passengers" : [],
-    "npcsPresent" : [],
+    "npcsPresent" : ["Filip"],
     "position" : 7
   },
   {

@@ -13,7 +13,7 @@ public class Npc {
     }
 
     public String getWelcomeMessage() {
-        return welcomeMessage;
+        return name +": \"" +welcomeMessage +"\"";
     }
 
     public String getDescription() {
