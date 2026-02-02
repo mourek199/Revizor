@@ -75,16 +75,11 @@ public class GameConsole {
         //endregion
 
         try {
-            System.out.println(gameData.loadManNames());
-            System.out.println(gameData.loadManLastNames());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        try {
             gameData.loadMap(gameMap);
             gameData.loadItems(gameMap);
             gameData.loadNpcs(gameMap);
+            PassengerBuilder pb = new PassengerBuilder();
+            System.out.println(pb.getManNames());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 public class GameData {
 
-
-
     public void loadMap(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
         try(InputStream input = new FileInputStream("res/dataLocations.json")) {
@@ -41,7 +39,7 @@ public class GameData {
         }
     }
 
-    public ArrayList<String> loadManNames() throws IOException {
+    public static ArrayList<String> loadManNames() throws IOException {
         ArrayList<String> loadedManNames = new ArrayList<>();
         String currentLine = "";
         BufferedReader br = new BufferedReader(new FileReader("res/manNames.txt"));
@@ -51,7 +49,7 @@ public class GameData {
         return loadedManNames;
     }
 
-    public ArrayList<String> loadManLastNames() throws IOException {
+    public static ArrayList<String> loadManLastNames() throws IOException {
         ArrayList<String> loadedManLastNames = new ArrayList<>();
         String currentLine = "";
         BufferedReader br = new BufferedReader(new FileReader("res/manLastnames.txt"));
