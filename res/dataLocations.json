@@ -10,7 +10,7 @@
   {
     "name" : "Letňany",
     "welcomeMessage" : "Letňany, konečná stanice, prosíme, vystupte.",
-    "description" : "Koukneš kolem sebe. Soustředíš se a náhle zaslechneš hluboký harmonický zvuk...\n Chvíli přemýšlíš co je to zač.. je to vrtačka? Ne.. Je to průvan? Premejslíš dál a dojde ti to...\n LETADLA!\n Vzpomeneš si že v letňanech mají letiště. Někdy by sis mohl po práci zalítat.\n",
+    "description" : "Koukneš kolem sebe. Soustředíš se a náhle zaslechneš hluboký harmonický zvuk...\nChvíli přemýšlíš co je to zač.. je to vrtačka? Ne.. Je to průvan? Premejslíš dál a dojde ti to...\nLETADLA!\nVzpomeneš si že v letňanech mají letiště. Někdy by sis mohl po práci zalítat.",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 1
@@ -18,7 +18,7 @@
   {
     "name" : "Prosek",
     "welcomeMessage" : "Prosek, vystupujte vpravo ve směru jízdy.",
-    "description" : "Kocháš se stanicí...\n Hrmm.. je to tu pěkné. Zaráží tě stěny v barvách vlajky Estonska...\n Jak pěkné...",
+    "description" : "Kocháš se stanicí...\nHrmm.. je to tu pěkné. Zaráží tě stěny v barvách vlajky Estonska...\nJak pěkné...",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 2
@@ -26,15 +26,15 @@
   {
     "name" : "Střížkov",
     "welcomeMessage" : "Střížkov, vystupujte vpravo ve směru jízdy.",
-    "description" : "Podíváš se kolem sebe... malebná stanice s prosklenou střechou a kolejemi uprostřed.\n Líbilo by se ti tu, ale odrážející sluníčko ti vypaluje zorničky.\n Zaujmou tě uschlé vysející liány, které se spouštějí z vrchní části stanice... Vypadají že kdysi musely být krásné.\n",
+    "description" : "Podíváš se kolem sebe... malebná stanice s prosklenou střechou a kolejemi uprostřed.\nLíbilo by se ti tu, ale odrážející sluníčko ti vypaluje zorničky.\nZaujmou tě uschlé vysející liány, které se spouštějí z vrchní části stanice... Vypadají že kdysi musely být krásné.",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 3
   },
   {
     "name" : "Ládví",
-    "welcomeMessage" : "Ládví.",
-    "description" : "Láááááádvííííííí",
+    "welcomeMessage" : "Ládví. Prostě Ládví. Já nevim co odsud očkávat. Prostě ládví",
+    "description" : "",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 4
@@ -42,7 +42,7 @@
   {
     "name" : "Kobylisy",
     "welcomeMessage" : "Kobylisy.",
-    "description" : "Rozhlížim se... Co to k čertu je?! To je nějakej hangár??\n Upřu svůj pohled směrem vzhůru a sem fascinován rozměrným zaobleným stropem.\n Tahle žlutobílá stanice připomíná gigantickou plechovku.\n",
+    "description" : "Rozhlížim se... Co to k čertu je?! To je nějakej hangár??\nUpřu svůj pohled směrem vzhůru a sem fascinován rozměrným zaobleným stropem.\nTahle žlutobílá stanice připomíná gigantickou plechovku.\n",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 5
@@ -50,7 +50,7 @@
   {
     "name" : "Nádraží Holešovice",
     "welcomeMessage" : "Nádraží Holešovice.",
-    "description" : "Náááádraží Holešoviceeeee",
+    "description" : "Obyčejnější stanici jsem jaktěživ neviděl...\nAle prej tu Průša prodává tiskárny...\nhmmm...",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 6
@@ -74,7 +74,7 @@
   {
     "name" : "Hlavní Nádraží",
     "welcomeMessage" : "Hlavní Nádraží.",
-    "description" : "Hlavák.. nevíš čím to je, ale zabolí tě hlava.\n",
+    "description" : "Hlavák.. nevím čím to je, ale zabolí mě hlava.",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 9
@@ -82,7 +82,7 @@
   {
     "name" : "Muzeum",
     "welcomeMessage" : "Muzeum, přestupní stanice.",
-    "description" : "Muzeuuuuum",
+    "description" : "Koukám, koukám... Jo tak muzeum jo?\nNo ale počkej... Kde mam jako tu kostru dinosaura?!\nl ",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 10
@@ -90,7 +90,7 @@
   {
     "name" : "I.P. Pavlova",
     "welcomeMessage" : "I. P. Pavlova, konečná stanice, prosíme vystupte.",
-    "description" : "Podíváš se kolem sebe.. vzpomínáš si jak jsi z ípáku chodil do školy...\n",
+    "description" : "Podíváš se kolem sebe.. vzpomínáš si jak jsi z ípáku chodil do školy...",
     "passengers" : [],
     "npcsPresent" : [],
     "position" : 11
