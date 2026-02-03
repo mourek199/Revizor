@@ -13,7 +13,8 @@ public class Lookaround extends Command {
     public String execute() {
         Tools.consoleClear();
         System.out.println(revizor.getCurrentLocation().getDescription());
-        System.out.println("\n•Kolem tebe se nachází " + Tools.color("blue", String.valueOf(Integer.valueOf(gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().length))) + " cestujících.");
+        System.out.println("\n•Kolem tebe se nachází " + Tools.color("blue", String.valueOf(Integer.valueOf(gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().size()))) +
+                " nezkontrolovaných cestujících.");
         if (revizor.getCurrentLocation().getNpcsPresent().size() > 0) {
             System.out.println("•V této lokaci se nachází další postavy: " + "\n");
             for (int i = 0; i < revizor.getCurrentLocation().getNpcsPresent().size(); i++) {

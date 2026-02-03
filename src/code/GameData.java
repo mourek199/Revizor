@@ -49,6 +49,26 @@ public class GameData {
         return loadedManNames;
     }
 
+    public static ArrayList<String> loadWomanNames() throws IOException {
+        ArrayList<String> loadedWomanNames = new ArrayList<>();
+        String currentLine = "";
+        BufferedReader br = new BufferedReader(new FileReader("res/womanNames.txt"));
+        while((currentLine = br.readLine()) != null) {
+            loadedWomanNames.add(currentLine);
+        }
+        return loadedWomanNames;
+    }
+
+    public static ArrayList<String> loadWomanLastNames() throws IOException {
+        ArrayList<String> loadedWomanLastNames = new ArrayList<>();
+        String currentLine = "";
+        BufferedReader br = new BufferedReader(new FileReader("res/womanLastnames.txt"));
+        while((currentLine = br.readLine()) != null) {
+            loadedWomanLastNames.add(currentLine);
+        }
+        return loadedWomanLastNames;
+    }
+
     public static ArrayList<String> loadManLastNames() throws IOException {
         ArrayList<String> loadedManLastNames = new ArrayList<>();
         String currentLine = "";

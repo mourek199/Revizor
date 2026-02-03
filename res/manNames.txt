@@ -1,8 +1,7 @@
 Antonín
 Andrej
 Alex
-Bruno
-Bill
+Bartoloměj
 Dan
 Denis
 David
@@ -44,7 +43,6 @@ Stanislav
 Tonda
 Tom
 Tomáš
-Trevor
 Tobiáš
 Viktor
 Vilém

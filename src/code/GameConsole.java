@@ -80,6 +80,14 @@ public class GameConsole {
             gameData.loadNpcs(gameMap);
             PassengerBuilder pb = new PassengerBuilder();
             System.out.println(pb.getManNames());
+            System.out.println(pb.getWomanNames());
+            System.out.println(pb.getManLastNames());
+            System.out.println(pb.getWomanLastnames());
+            for (Location l:gameMap.getLocations()){
+                for (int i = 0; i < 3; i++) {
+                    l.getPassengers().add(new Passenger());
+                }
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

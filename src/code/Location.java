@@ -7,7 +7,7 @@ public class Location {
     private String welcomeMessage;
     private String description;
     private ArrayList<String> npcsPresent;
-    private Passenger[] passengers;
+    private ArrayList<Passenger> passengers;
     private int position;
 
     public Location() {
@@ -45,11 +45,11 @@ public class Location {
         this.description = description;
     }
 
-    public Passenger[] getPassengers() {
+    public ArrayList<Passenger> getPassengers() {
         return passengers;
     }
 
-    public void setPassengers(Passenger[] passengers) {
+    public void setPassengers(ArrayList<Passenger> passengers) {
         this.passengers = passengers;
     }
 
@@ -67,7 +67,7 @@ public class Location {
                 "\nlocation name: " + name +
                 "\ndescription: " + description +
                 "\nwelcome message: " + welcomeMessage +
-                "\npresent passengers: " + Arrays.toString(passengers) +
+                "\npresent passengers: " + passengers +
                 "\nposition: " + position;
     }
 }
