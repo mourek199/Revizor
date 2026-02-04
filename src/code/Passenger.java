@@ -1,5 +1,4 @@
 package code;
-
 import java.util.Random;
 
 public class Passenger {
@@ -23,9 +22,7 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Passenger{" +
-                firstName + " " +
-                lastName + " (" + age + " let)" +
-                '}';
+        return  firstName + " " +
+                lastName + " (" + age + " let)";
     }
 }

@@ -21,7 +21,7 @@ public class Talk extends Command {
     public String execute() {
         Tools.consoleClear();
         if (revizor.getCurrentLocation().getNpcsPresent()!=null) {
-            System.out.println("Na " + Tools.color("blue", revizor.getCurrentLocation().getName()) + " se nachází tito lidé. Zadej jméno se kterým chceš mluvit: ");
+            System.out.println("Na " + Tools.color("blue", revizor.getCurrentLocation().getName()) + " Se kromě cestujících nachází i tyto postavy. Zadej jméno se kterým chceš mluvit: ");
             for (int i = 0; i < revizor.getCurrentLocation().getNpcsPresent().size(); i++) {
                 System.out.println("•" + revizor.getCurrentLocation().getNpcsPresent().get(i) );
             }

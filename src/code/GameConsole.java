@@ -26,42 +26,33 @@ public class GameConsole {
     public void innit(){
         //region commandInnit
         //region moveCommand
-        availableCommands.put("nastup", new Move(revizor, gameMap));
         availableCommands.put("go", new Move(revizor, gameMap));
         availableCommands.put("jdi", new Move(revizor, gameMap));
-        availableCommands.put("bez", new Move(revizor, gameMap));
-        availableCommands.put("běž", new Move(revizor, gameMap));
         availableCommands.put("move", new Move(revizor, gameMap));
         //endregion
-
         // region waitCommand
         availableCommands.put("cekej", new Wait(revizor, gameMap));
-        availableCommands.put("čekej", new Wait(revizor, gameMap));
         availableCommands.put("wait", new Wait(revizor, gameMap));
         //endregion
-
         //region lookaroundCommand
         availableCommands.put("lookaround", new Lookaround(revizor, gameMap));
         availableCommands.put("kochat", new Lookaround(revizor, gameMap));
         availableCommands.put("kochatse", new Lookaround(revizor, gameMap));
         //endregion
-
         //region helpCommand
         availableCommands.put("help", new Help());
         availableCommands.put("pomoc", new Help());
         availableCommands.put("heeelp", new Help());
         //endregion
-
         //region bagCommand
         availableCommands.put("batoh", new Bag(revizor));
         availableCommands.put("bag", new Bag(revizor));
         availableCommands.put("inventory", new Bag(revizor));
         //endregion
-
         //region suicideCommand
         availableCommands.put("skok", new Suicide(revizor));
+        availableCommands.put("jump", new Suicide(revizor));
         //endregion
-
         //region psychologistCommand
         availableCommands.put("psycholog", new Psychologist(revizor));
         availableCommands.put("psychologist", new Psychologist(revizor));
@@ -71,6 +62,10 @@ public class GameConsole {
         //endregion
         //region talkCommand
         availableCommands.put("talk", new Talk(revizor, gameMap));
+        //endregion
+        //region passengerCheckCommand
+        availableCommands.put("kontrola", new PassengerCheck(revizor, gameMap));
+        availableCommands.put("check", new PassengerCheck(revizor, gameMap));
         //endregion
         //endregion
 

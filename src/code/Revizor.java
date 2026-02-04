@@ -8,6 +8,7 @@ public class Revizor {
     private Location headingLocation;
     private ArrayList<Item> items;
     private Npc activeNpc;
+    private Passenger activePassenger;
     private String name;
     private int capacity = 5;
     private int money = 0;
@@ -51,6 +52,14 @@ public class Revizor {
 
     public void setActiveNpc(Npc activeNpc) {
         this.activeNpc = activeNpc;
+    }
+
+    public Passenger getActivePassenger() {
+        return activePassenger;
+    }
+
+    public void setActivePassenger(Passenger activePassenger) {
+        this.activePassenger = activePassenger;
     }
 
     public ArrayList<Item> getItems() {
