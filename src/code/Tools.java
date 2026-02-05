@@ -25,6 +25,22 @@ public class Tools {
         };
     }
 
+    public static void charPrint(String text, int speed){
+        String[] individualCharacters = text.split("");
+        for (int i = 0; i < individualCharacters.length; i++) {
+            System.out.print(individualCharacters[i]);
+            freeze(speed);
+        }
+    }
+
+    public static void freeze(int howLong){
+        try {
+            Thread.sleep(howLong);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void pressEnter(){
         System.out.print("Pro pokračování stiskni " + color("blue", "Enter"));
         sc.nextLine();

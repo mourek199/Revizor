@@ -46,6 +46,10 @@ public class Revizor {
         else return "Nebudu to jíst.";
     }
 
+    public String getName() {
+        return name;
+    }
+
     public Npc getActiveNpc() {
         return activeNpc;
     }

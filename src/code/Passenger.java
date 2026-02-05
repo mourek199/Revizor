@@ -47,4 +47,8 @@ public class Passenger {
     public int getUsedId() {
         return usedId;
     }
+
+    public boolean isFemale() {
+        return female;
+    }
 }

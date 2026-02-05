@@ -42,4 +42,8 @@ public class PassengerBuilder {
     public ArrayList<String> getWomanLastnames() {
         return WomanLastnames;
     }
+
+    public static HashMap<Integer, PassengerIdentification> getIdentification() {
+        return identification;
+    }
 }
