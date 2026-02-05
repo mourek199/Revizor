@@ -1,8 +1,5 @@
 package code.commands;
-import code.GameMap;
-import code.Passenger;
-import code.Revizor;
-import code.Tools;
+import code.*;
 
 import java.util.Scanner;
 
@@ -28,7 +25,12 @@ public class PassengerCheck extends Command {
         }
         revizor.setActivePassenger(revizor.getCurrentLocation().getPassengers().get(sc.nextInt()-1));
         Tools.consoleClear();
-        System.out.println("Přiblížíš se k "+revizor.getActivePassenger() + " a začíná kontrola.");
+        System.out.println("Přiblížíš se k cestujícímu: " +revizor.getActivePassenger() + " a začíná kontrola.");
+        Tools.pressEnter();
+        Tools.consoleClear();
+        System.out.println(revizor.getActivePassenger() + " využívá k identifikaci: " +
+                           Tools.color(PassengerBuilder.identification.get(revizor.getActivePassenger().getUsedId()).getColor(),
+                           PassengerBuilder.identification.get(revizor.getActivePassenger().getUsedId()).getIdType()));
         Tools.pressEnter();
         Tools.consoleClear();
         return "";

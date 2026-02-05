@@ -7,6 +7,7 @@ public class Passenger {
     private String lastName;
     private int age;
     private boolean female;
+    private int usedId;
 
     public Passenger() {
         this.female = rd.nextBoolean();
@@ -18,11 +19,32 @@ public class Passenger {
             this.lastName = PassengerBuilder.ManLastNames.get(rd.nextInt(PassengerBuilder.ManLastNames.size()));
         }
         this.age = rd.nextInt(9,81);
+
+        this.usedId = rd.nextInt(0, 4);
+        if (PassengerBuilder.identification.get(usedId).getChance() <= rd.nextInt(1, 11)){
+            this.usedId = rd.nextInt(0, 4);
+        }
     }
 
     @Override
     public String toString() {
         return  firstName + " " +
                 lastName + " (" + age + " let)";
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public int getUsedId() {
+        return usedId;
     }
 }
