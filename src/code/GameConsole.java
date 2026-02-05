@@ -66,6 +66,8 @@ public class GameConsole {
         //region passengerCheckCommand
         availableCommands.put("kontrola", new PassengerCheck(revizor, gameMap));
         availableCommands.put("check", new PassengerCheck(revizor, gameMap));
+
+
         //endregion
         //endregion
 
@@ -82,6 +84,9 @@ public class GameConsole {
                 for (int i = 0; i < 3; i++) {
                     l.getPassengers().add(new Passenger());
                 }
+            }
+            for (int i = 0; i < 5000; i++) {
+                System.out.println(new Passenger());
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
