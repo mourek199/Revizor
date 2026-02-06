@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class is used for storing available information that a passenger can earn
+ */
 public class PassengerBuilder {
     public static ArrayList<String> ManNames;
     public static ArrayList<String> ManLastNames;

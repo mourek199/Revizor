@@ -1,5 +1,8 @@
 package code;
 
+/**
+ * This class represents a character which the player can interact with
+ */
 public class Npc {
     private String name;
     private String welcomeMessage;

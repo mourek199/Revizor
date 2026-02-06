@@ -1,5 +1,8 @@
 package code;
 
+/**
+ * Each passenger has their identification document
+ */
 public class PassengerIdentification {
     private String idType;
     private String color;

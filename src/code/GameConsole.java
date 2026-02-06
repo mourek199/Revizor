@@ -104,7 +104,7 @@ public class GameConsole {
             shouldExit = availableCommands.get(inputCommand).exit();
         }
         else {
-            System.out.println(Tools.color("red", "NEROZUMÍM TOMUTO PŘÍKAZU"));
+            System.out.println(Tools.color("red", "NEROZUMÍM TOMUTO PŘÍKAZU (Napiš \"help\" pro pomoc s příkazy)"));
         }
     }
 

@@ -28,6 +28,9 @@ public class PassengerCheck extends Command {
 
     }
 
+    /**
+     * Lets player choose one present passenger and performs a passenger check
+     */
     @Override
     public String execute() {
         Tools.consoleClear();
@@ -49,6 +52,9 @@ public class PassengerCheck extends Command {
         return "";
     }
 
+    /**
+     * All passenger-checking terminal functions in one spot
+     */
     public void revizorTerminal() {
         boolean answered = false;
         while (!answered) {
@@ -69,6 +75,9 @@ public class PassengerCheck extends Command {
         checkResult();
     }
 
+    /**
+     * Lets player decide if the current passenger is free to go or needs to get fined
+     */
     public void decideFaith() {
         boolean answered = false;
         while (!answered) {
@@ -95,6 +104,9 @@ public class PassengerCheck extends Command {
         }
     }
 
+    /**
+     * Gives passenger a fee
+     */
     public void fee() {
         Tools.consoleClear();
         System.out.print("Hehe.. Dám ");
@@ -114,6 +126,9 @@ public class PassengerCheck extends Command {
 
     }
 
+    /**
+     * Prints available identification options in random colors
+     */
     public void printTerminalOptions() {
         System.out.println("přiřaď co pasažér používá za doklad:");
         terminalColors.add("green");
@@ -130,6 +145,9 @@ public class PassengerCheck extends Command {
         }
     }
 
+    /**
+     * Prints a table with all necessary (and unnecessary!) details about the passenger check
+     */
     public void checkResult(){
         Tools.consoleClear();
         int moneyForCheck = 100 + revizor.getDepression()*-10;

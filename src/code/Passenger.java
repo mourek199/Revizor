@@ -1,6 +1,9 @@
 package code;
 import java.util.Random;
 
+/**
+ * This class represents a passenger which can be checked by player
+ */
 public class Passenger {
     Random rd = new Random();
     private String firstName;

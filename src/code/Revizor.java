@@ -23,6 +23,11 @@ public class Revizor {
         this.gameMap = gameMap;
     }
 
+    /**
+     *
+     * @param item Defines what item is added to player's inventory
+     * @return whether the item was succesfully added
+     */
     public boolean addItem(Item item) {
         if (items.size()+1 <= capacity) {
             items.add(item);
@@ -30,6 +35,11 @@ public class Revizor {
         }else return false;
     }
 
+    /**
+     *
+     * @param itemName Defines what item should be removed from player's inventory
+     * @return whether the demanded item was removed from players inventory
+     */
     public boolean removeItem(String itemName) {
         if (gameMap.getItems().containsKey(itemName) && items.contains(gameMap.getItems().get(itemName))) {
             items.remove(gameMap.getItems().get(itemName));
@@ -37,6 +47,11 @@ public class Revizor {
         }else return false;
     }
 
+    /**
+     *
+     * @param itemName Defines the name of item which is about to be consumed and removed from player's inventory
+     * @return information about consuming
+     */
     public String consumeItem(String itemName) {
         if (items.contains(gameMap.getItems().get(itemName))) {
             depression += gameMap.getItems().get(itemName).getDepressionChange();
