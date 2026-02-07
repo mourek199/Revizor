@@ -93,6 +93,7 @@ public class PassengerCheck extends Command {
                     } else {
                         crimeIgnored = false;
                     }
+                    gaveFee = false;
                     answered = true;
                 }
                 case 2 -> {
