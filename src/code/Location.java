@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- *
+ *A location which can be visited by player
  */
 public class Location {
     private String name;

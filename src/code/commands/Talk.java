@@ -7,6 +7,9 @@ import code.Tools;
 
 import java.util.Scanner;
 
+/**
+ * Lets player talk to non-playable characters
+ */
 public class Talk extends Command {
     private Revizor revizor;
     private GameMap gameMap;
@@ -17,6 +20,10 @@ public class Talk extends Command {
         this.gameMap = gameMap;
     }
 
+    /**
+     * prints list of available caracters and lets player decide which one to interact with
+     * @return
+     */
     @Override
     public String execute() {
         Tools.consoleClear();

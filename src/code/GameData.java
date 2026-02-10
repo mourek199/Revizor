@@ -4,8 +4,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * This class is used for loading stuff
+ */
 public class GameData {
 
+    /**
+     * loads all locations from json into the game map
+     * @param gameMap
+     */
     public void loadMap(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
         try(InputStream input = new FileInputStream("res/dataLocations.json")) {
@@ -15,6 +22,10 @@ public class GameData {
         }
     }
 
+    /**
+     * loads all Npcs from json into the game map
+     * @param gameMap
+     */
     public void loadNpcs(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
         try(InputStream input = new FileInputStream("res/dataNpcs.json")) {
@@ -27,6 +38,10 @@ public class GameData {
         }
     }
 
+    /**
+     * loads all items from json to game map
+     * @param gameMap
+     */
     public void loadItems(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
         try(InputStream input = new FileInputStream("res/dataItems.json")) {
@@ -39,6 +54,11 @@ public class GameData {
         }
     }
 
+    /**
+     * loads all man first names from text file
+     * @return ArrayList of all names
+     * @throws IOException
+     */
     public static ArrayList<String> loadManNames() throws IOException {
         ArrayList<String> loadedManNames = new ArrayList<>();
         String currentLine = "";
@@ -49,6 +69,11 @@ public class GameData {
         return loadedManNames;
     }
 
+    /**
+     * loads all woman first names from text file
+     * @return ArrayList of all names
+     * @throws IOException
+     */
     public static ArrayList<String> loadWomanNames() throws IOException {
         ArrayList<String> loadedWomanNames = new ArrayList<>();
         String currentLine = "";
@@ -59,6 +84,11 @@ public class GameData {
         return loadedWomanNames;
     }
 
+    /**
+     * loads all woman last names from text file
+     * @return ArrayList of all names
+     * @throws IOException
+     */
     public static ArrayList<String> loadWomanLastNames() throws IOException {
         ArrayList<String> loadedWomanLastNames = new ArrayList<>();
         String currentLine = "";
@@ -69,6 +99,11 @@ public class GameData {
         return loadedWomanLastNames;
     }
 
+    /**
+     * loads all man last names from text file
+     * @return ArrayList of all names
+     * @throws IOException
+     */
     public static ArrayList<String> loadManLastNames() throws IOException {
         ArrayList<String> loadedManLastNames = new ArrayList<>();
         String currentLine = "";

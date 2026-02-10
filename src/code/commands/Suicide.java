@@ -2,11 +2,17 @@ package code.commands;
 
 import code.Revizor;
 
+/**
+ * This command lets player end the game early by commiting suicide
+ */
 public class Suicide extends Command {
 
     private Revizor revizor;
 
     @Override
+    /**
+     * checks if the player is able to commit suicide by calling exit() method
+     */
     public String execute() {
         if(!revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
             if (exit()){
@@ -17,6 +23,10 @@ public class Suicide extends Command {
         }
     }
 
+    /**
+     * calculates if the player is able to commit the action depending on depression status and location
+     * @return
+     */
     @Override
     public boolean exit() {
         if (revizor.getDepression() > 30 && !revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){

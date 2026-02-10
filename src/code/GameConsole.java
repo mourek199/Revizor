@@ -2,11 +2,12 @@ package code;
 
 import code.commands.*;
 
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * This class is used for typing and executing commands.
+ */
 public class GameConsole {
 
     private Scanner sc;
@@ -23,6 +24,10 @@ public class GameConsole {
         revizor = new Revizor("R", gameMap);
     }
 
+
+    /**
+     *Initializes the game and creates the commands
+     */
     public void innit(){
         //region commandInnit
         //region moveCommand
@@ -66,11 +71,17 @@ public class GameConsole {
         //region passengerCheckCommand
         availableCommands.put("kontrola", new PassengerCheck(revizor, gameMap));
         availableCommands.put("check", new PassengerCheck(revizor, gameMap));
-
-
         //endregion
         //endregion
 
+        loadStuff();
+        revizor.setCurrentLocation(gameMap.getLocations()[7]);
+    }
+
+    /**
+     * loads data from resource root
+     */
+    public void loadStuff(){
         try {
             gameData.loadMap(gameMap);
             gameData.loadItems(gameMap);
@@ -91,9 +102,11 @@ public class GameConsole {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        revizor.setCurrentLocation(gameMap.getLocations()[7]);
     }
 
+    /**
+     * Scans for input and executes desired command
+     */
     public void execute(){
         System.out.print(">>");
         String inputCommand = sc.next().toLowerCase().trim();
@@ -108,6 +121,9 @@ public class GameConsole {
         }
     }
 
+    /**
+     * The whole game cycle. The cycle ends if any called command's exit method returns true
+     */
     public void start(){
         innit();
         do {

@@ -10,7 +10,6 @@ public class Help extends Command {
     @Override
     public String execute() {
         Tools.consoleClear();
-
         return Tools.color("red", Tools.line(50))+
                 "\nDostupné příkazy:" +
                 "\n  •help -> ukáže dostupné příkazy" +

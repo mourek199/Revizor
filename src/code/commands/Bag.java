@@ -6,18 +6,28 @@ import code.Tools;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * It's a backpack
+ */
 public class Bag extends Command {
 
     private Revizor revizor;
     Scanner sc = new Scanner(System.in);
 
+
     public Bag(code.Revizor revizor) {
         this.revizor = revizor;
     }
 
+    /**
+     * prints the contents of players inventory and lets player interact with items and consume consumable items
+     * @return it doesn't
+     */
     @Override
     public String execute() {
         Tools.consoleClear();
+        System.out.println(Tools.color("red", Tools.line(100)));
+        wallet();
         System.out.println(Tools.color("red", Tools.line(100)));
         if (!revizor.getItems().isEmpty()) {
             System.out.println("Ve tvé revizorské brašně se nachází tyto předměty:");
@@ -70,6 +80,10 @@ public class Bag extends Command {
         }
         Tools.consoleClear();
         return "";
+    }
+
+    public void wallet(){
+        System.out.println("Tvoje peníze: " + revizor.getMoney());
     }
 
     @Override

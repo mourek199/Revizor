@@ -2,6 +2,7 @@ package code.commands;
 
 import code.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -35,12 +36,31 @@ public class PassengerCheck extends Command {
     public String execute() {
         Tools.consoleClear();
         System.out.println("Vyber si koho chceš zkontrolovat:");
+        System.out.println(Tools.color("Red", "0) ") + "Zrušit kontrolu");
         int passengerIndex = 0;
         for (Passenger p : revizor.getCurrentLocation().getPassengers()) {
             passengerIndex++;
-            System.out.println(passengerIndex + ") " + p);
+            System.out.println(Tools.color("Yellow", passengerIndex + ") ") + p);
         }
-        revizor.setActivePassenger(revizor.getCurrentLocation().getPassengers().get(sc.nextInt() - 1));
+        int input = 0;
+        boolean checkCancelled = false;
+        try{
+            input = sc.nextInt();
+            if (input == 0){
+                checkCancelled = true;
+            }
+            revizor.setActivePassenger(revizor.getCurrentLocation().getPassengers().get(input - 1));
+        }catch (InputMismatchException | IndexOutOfBoundsException e){
+            Tools.consoleClear();
+            sc.nextLine();
+            if (checkCancelled){
+                System.out.println("Kontrola byla zrušena.");
+            }else{
+                Tools.invalidInput();
+            }
+            return "Cestující nevybrán.";
+        }
+
         Tools.consoleClear();
         System.out.println("Přiblížíš se k cestujícímu: " + revizor.getActivePassenger() + " a začíná kontrola.");
         Tools.pressEnter();
@@ -49,7 +69,7 @@ public class PassengerCheck extends Command {
                 Tools.color(PassengerBuilder.identification.get(revizor.getActivePassenger().getUsedId()).getColor(),
                         PassengerBuilder.identification.get(revizor.getActivePassenger().getUsedId()).getIdType()));
         revizorTerminal();
-        return "";
+        return "cestující vybrán";
     }
 
     /**
@@ -124,7 +144,6 @@ public class PassengerCheck extends Command {
         System.out.println(" tučnou pokutičku... :)");
         Tools.pressEnter();
         Tools.consoleClear();
-
     }
 
     /**
@@ -158,6 +177,8 @@ public class PassengerCheck extends Command {
         }
         int totalDepression = 0;
         int totalMoney = moneyForCheck + moneyForFee;
+        revizor.setMoney(revizor.getMoney() + totalMoney);
+        revizor.setDepression(revizor.getDepression() + totalDepression);
 
         System.out.println((Tools.color("red",Tools.line(50))));
         System.out.println(Tools.color("red", "        -VÝSLEDEK PŘEPRAVNÍ KONTROLY- "));

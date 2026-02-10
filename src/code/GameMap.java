@@ -3,6 +3,9 @@ package code;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class stores all game locations, items and characters
+ */
 public class GameMap {
     private Location[] locations;
     private HashMap<String, Item> items;

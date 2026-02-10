@@ -10,12 +10,17 @@ public class Wait extends Command {
 
     private Revizor revizor;
 
+    /**
+     * Waiting lets player skip time
+     * @param revizor
+     * @param gameMap
+     */
     public Wait(Revizor revizor, GameMap gameMap) {
         this.revizor = revizor;
     }
 
     /**
-     *
+     *Shortens waiting time needed to arrive to station by 1 point
      * @return
      */
     @Override

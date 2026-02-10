@@ -1,5 +1,8 @@
 package code;
 
+/**
+ * An item is an object which can be picked up, carried in player's backpack or consumed in some cases
+ */
 public class Item {
     private String name;
     private String description;

@@ -3,12 +3,17 @@ package code.commands;
 import code.GameMap;
 import code.Revizor;
 import code.Tools;
-import org.w3c.dom.ls.LSOutput;
 
+/**
+ * Used to give the player a description of the current location they're in
+ */
 public class Lookaround extends Command {
     private Revizor revizor;
     private GameMap gameMap;
 
+    /**
+     * prints location description, number of passengers and NPC's names if present
+     */
     @Override
     public String execute() {
         Tools.consoleClear();
@@ -22,10 +27,6 @@ public class Lookaround extends Command {
             }
         }
         return "";
-    }
-
-    public void passengerCheck(){
-        
     }
 
     public Lookaround(Revizor revizor, GameMap gameMap) {

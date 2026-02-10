@@ -3,9 +3,15 @@ package code.commands;
 import code.Revizor;
 import code.Tools;
 
+/**
+ * Command used to tell status and heal depression
+ */
 public class Psychologist extends Command {
     private Revizor revizor;
 
+    /**
+     *Reviews player's depression state depending on depression value
+     */
     @Override
     public String execute() {
         Tools.consoleClear();

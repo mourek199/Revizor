@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Command used for traveling from station to station
+ */
 public class Move extends Command {
     private Revizor revizor;
     private GameMap gameMap;
@@ -20,6 +23,10 @@ public class Move extends Command {
         this.gameMap = gameMap;
     }
 
+    /**
+     * Lets player choose a station where to relocate themselves
+     * @return current traveling status
+     */
     @Override
     public String execute() {
         revizor.addItem(gameMap.getItems().get("bageta"));
@@ -55,6 +62,9 @@ public class Move extends Command {
             return Tools.color("red", "NYNÍ NELZE CESTOVAT. VYČKEJ NA PŘÍJEZD DO STANICE");}
     }
 
+    /**
+     * prints the list of available stations
+     */
     public void availableStations(){
         //region availableStationsPrint
         Tools.consoleClear();
