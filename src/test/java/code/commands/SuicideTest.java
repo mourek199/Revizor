@@ -1,7 +1,9 @@
 package code.commands;
 
+
 import code.Location;
 import code.Revizor;
+import commands.Suicide;
 import org.junit.Before;
 import org.junit.Test;
 

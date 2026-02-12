@@ -1,4 +1,4 @@
-package code;
+import code.GameConsole;
 
 /**
  * It's a main class

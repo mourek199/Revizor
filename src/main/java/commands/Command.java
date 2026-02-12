@@ -1,4 +1,4 @@
-package code.commands;
+package commands;
 
 /**
  *  It's a command!

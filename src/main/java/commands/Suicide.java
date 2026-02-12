@@ -1,4 +1,4 @@
-package code.commands;
+package commands;
 
 import code.Revizor;
 import code.Tools;

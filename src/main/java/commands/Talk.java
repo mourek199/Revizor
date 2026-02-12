@@ -1,4 +1,4 @@
-package code.commands;
+package commands;
 
 import code.GameMap;
 import code.Npc;
