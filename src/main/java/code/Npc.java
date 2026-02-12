@@ -33,4 +33,24 @@ public class Npc {
     public String getCharacterItem() {
         return characterItem;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWelcomeMessage(String welcomeMessage) {
+        this.welcomeMessage = welcomeMessage;
+    }
+
+    public void setGoodbyeMessage(String goodbyeMessage) {
+        this.goodbyeMessage = goodbyeMessage;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCharacterItem(String characterItem) {
+        this.characterItem = characterItem;
+    }
 }

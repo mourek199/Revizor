@@ -43,10 +43,8 @@ public class Wait extends Command {
         return revizor.getTimeElapsed();
     }
 
-    /**
-     *Checks if player arrived. If so, then sets CurrentLocation to desired location
-     * @return whether the player already arrived to desired location (true/false)
-     */
+
+
     public boolean isArrived(){
         if (revizor.getTimeElapsed() >= revizor.getRideTime()){
             revizor.setCurrentLocation(revizor.getHeadingLocation());

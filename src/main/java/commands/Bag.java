@@ -87,12 +87,12 @@ public class Bag extends Command {
         return "";
     }
 
-    public void wallet() {
+    public String wallet() {
         System.out.print("Tvoje peníze: ");
         if (revizor.getMoney() >= 0) {
-            System.out.println(Tools.color("yellow", (revizor.getMoney()) + "kč"));
+            return Tools.color("yellow", (revizor.getMoney()) + "kč");
         } else {
-            System.out.println(Tools.color("red", (revizor.getMoney()) + "kč"));
+            return Tools.color("red", (revizor.getMoney()) + "kč");
         }
 
     }

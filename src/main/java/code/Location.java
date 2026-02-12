@@ -94,6 +94,18 @@ public class Location {
         this.innitPassengerSize = innitPassengerSize;
     }
 
+    public int getPassengersDone() {
+        return passengersDone;
+    }
+
+    public void setPassengersDone(int passengersDone) {
+        this.passengersDone = passengersDone;
+    }
+
+    public void setCompletion(double completion) {
+        this.completion = completion;
+    }
+
     @Override
     public String toString() {
         return  Tools.color("blue", Tools.line(20)) +
