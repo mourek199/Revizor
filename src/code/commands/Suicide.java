@@ -36,6 +36,7 @@ public class Suicide extends Command {
         } else return false;
     }
 
+
     public Suicide(code.Revizor revizor){
         this.revizor = revizor;
     }

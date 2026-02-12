@@ -26,6 +26,9 @@ public class Revizor {
         this.name = name;
         this.gameMap = gameMap;
     }
+    public Revizor(){
+
+    }
 
     /**
      *

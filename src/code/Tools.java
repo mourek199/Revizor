@@ -3,7 +3,7 @@ package code;
 import java.util.Scanner;
 
 /**
- * This class offers some handful tools. Mostly printing methods.
+ * This class offers some handful tools. Mostly printing methods.0
  */
 public class Tools {
 
