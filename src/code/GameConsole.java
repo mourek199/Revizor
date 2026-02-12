@@ -21,7 +21,7 @@ public class GameConsole {
         shouldExit = false;
         availableCommands = new HashMap<>();
         sc = new Scanner(System.in);
-        revizor = new Revizor("R", gameMap);
+        revizor = new Revizor("Tonyyy", gameMap);
     }
 
 
@@ -67,6 +67,7 @@ public class GameConsole {
         //endregion
         //region talkCommand
         availableCommands.put("talk", new Talk(revizor, gameMap));
+        availableCommands.put("mluv", new Talk(revizor, gameMap));
         //endregion
         //region passengerCheckCommand
         availableCommands.put("kontrola", new PassengerCheck(revizor, gameMap));
@@ -76,6 +77,9 @@ public class GameConsole {
 
         loadStuff();
         revizor.setCurrentLocation(gameMap.getLocations()[7]);
+        for (int i = 0; i < 2; i++) {
+            revizor.addItem(gameMap.getItems().get("bageta"));
+        }
     }
 
     /**
@@ -87,17 +91,10 @@ public class GameConsole {
             gameData.loadItems(gameMap);
             gameData.loadNpcs(gameMap);
             PassengerBuilder pb = new PassengerBuilder();
-            System.out.println(pb.getManNames());
-            System.out.println(pb.getWomanNames());
-            System.out.println(pb.getManLastNames());
-            System.out.println(pb.getWomanLastnames());
             for (Location l:gameMap.getLocations()){
                 for (int i = 0; i < 3; i++) {
                     l.getPassengers().add(new Passenger());
                 }
-            }
-            for (int i = 0; i < 5000; i++) {
-                System.out.println(new Passenger());
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

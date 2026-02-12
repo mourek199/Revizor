@@ -53,8 +53,9 @@ public class Bag extends Command {
             if (tempItem.isConsumable()){
                 System.out.println("Tento předmět vypadá, že se dá sníst. \nPřeješ si sníst " + Tools.color("blue", tempItem.getName()) + " ?" + Tools.yesNo());
                 boolean answered2 = false;
-                String input = sc.next();
+                String input;
                 while (!answered2) {
+                    input = sc.next();
                     if (input.equalsIgnoreCase("A")) {
                         Tools.consoleClear();
                         System.out.println(revizor.consumeItem(tempItem.getName()));
@@ -64,6 +65,7 @@ public class Bag extends Command {
                         System.out.println("Rozhodl jsi se předmět nekonzumovat");
                         answered2 = true;
                     } else {
+                        sc.nextLine();
                         Tools.invalidInput();
                     }
                 }
@@ -83,7 +85,13 @@ public class Bag extends Command {
     }
 
     public void wallet(){
-        System.out.println("Tvoje peníze: " + revizor.getMoney());
+        System.out.print("Tvoje peníze: ");
+        if (revizor.getMoney()>=0){
+            System.out.println(Tools.color("yellow",(revizor.getMoney()) + "kč"));
+        }else {
+            System.out.println(Tools.color("red", (revizor.getMoney()) + "kč"));
+        }
+
     }
 
     @Override

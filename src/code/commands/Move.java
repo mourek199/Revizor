@@ -29,6 +29,7 @@ public class Move extends Command {
      */
     @Override
     public String execute() {
+        Tools.consoleClear();
         revizor.addItem(gameMap.getItems().get("bageta"));
         if (!revizor.isTravelling()) {
             int desiredLocation = 0;

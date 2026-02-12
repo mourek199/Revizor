@@ -12,7 +12,7 @@ public class Revizor {
     private String name;
     private int capacity = 5;
     private int money = 0;
-    private int depression = 31;
+    private int depression = 12;
     private int timeElapsed = 0;
     private int rideTime = 0;
 

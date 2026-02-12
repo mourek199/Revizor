@@ -12,12 +12,14 @@ public class Help extends Command {
         Tools.consoleClear();
         return Tools.color("red", Tools.line(50))+
                 "\nDostupné příkazy:" +
-                "\n  •help -> ukáže dostupné příkazy" +
-                "\n  •lookaround -> sdělí informace o aktualním prostředí"+
-                "\n  •cekej -> urychluje cestu metrem (nelze použít na stanici)" +
-                "\n  •jdi -> nastoupí z aktuální stanice do soupravy metra" +
-                "\n  •batoh -> zobrazí inventář" +
-                "\n  •skok -> pokus o sebevraždu" +
+                "\n  •help/pomoc -> ukáže dostupné příkazy" +
+                "\n  •lookaround/kochat se -> sdělí informace o aktualním prostředí"+
+                "\n  •wait/cekej -> urychluje cestu metrem (nelze použít na stanici)" +
+                "\n  •go/jdi -> nastoupí z aktuální stanice do soupravy metra" +
+                "\n  •bag/batoh -> zobrazí inventář" +
+                "\n  •check/kontrola -> zahájí kontrolu dokladů okolních cestujících" +
+                "\n  •talk/mluv -> nabídne dostupné postavy se kterýmy lze hovořit" +
+                "\n  •jump/skok -> pokus o sebevraždu" +
                 "\n  •psycholog -> sdělí aktualní informace o duševním zdraví revizora" +
                 "\n"+Tools.color("red", Tools.line(50));
     }

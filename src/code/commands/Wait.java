@@ -25,8 +25,8 @@ public class Wait extends Command {
      */
     @Override
     public String execute() {
+        Tools.consoleClear();
         if (revizor.getCurrentLocation().getName() != null && revizor.getCurrentLocation().getName().equalsIgnoreCase("Metro")){
-            Tools.consoleClear();
             shortRest();
             isArrived();
             return revizor.situation();

@@ -70,7 +70,7 @@ public class Tools {
      * Yells at you for not being able to choose from a dialog window
      */
     public static void invalidInput(){
-        System.out.println(Tools.color("red", "NEPLATNÝ VSTUP, PROSÍM ZKUS TO ZNOVU"));
+        System.out.println(Tools.color("red", "NEPLATNÝ VSTUP, ZKUS TO ZNOVU"));
     }
 
     /**
@@ -112,6 +112,16 @@ public class Tools {
     public static String unAvailableCommand(){
         consoleClear();
         return color("red", "TENTO PŘÍKAZ TEĎ NELZE POUŽÍT (Napiš \"help\" pro pomoc s příkazy)");
+    }
+
+    /**
+     * A set of methods resulting in a warning message that a player entered an invalid input
+     */
+    public static void didItWrong(){
+        consoleClear();
+        invalidInput();
+        pressEnter();
+        consoleClear();
     }
 
     /**

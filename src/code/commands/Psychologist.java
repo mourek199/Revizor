@@ -20,11 +20,11 @@ public class Psychologist extends Command {
             return "Tvůj mentální stav " + Tools.color("green", "není vážný ")
                     +"(aktuální stav deprese = " + Tools.color("green", String.valueOf(revizor.getDepression())) + ")";
         }
-        if (revizor.getDepression() > 5 && revizor.getDepression() <= 10){
+        if (revizor.getDepression() > 5 && revizor.getDepression() <= 25){
             return "Tvůj mentální stav " + Tools.color("yellow", "je lehce znepokojující ")
                     +"(aktuální stav deprese = " + Tools.color("yellow", String.valueOf(revizor.getDepression())) + ")";
         }
-        if (revizor.getDepression() > 10 && revizor.getDepression() <= 30){
+        if (revizor.getDepression() > 25 && revizor.getDepression() <= 200){
             return "Tvůj mentální stav " + Tools.color("red", "je silně znepokojující ")
                     +"(aktuální stav deprese = " + Tools.color("red", String.valueOf(revizor.getDepression())) + ")";
         }

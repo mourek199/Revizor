@@ -1,6 +1,7 @@
 package code.commands;
 
 import code.Revizor;
+import code.Tools;
 
 /**
  * This command lets player end the game early by commiting suicide
@@ -14,6 +15,7 @@ public class Suicide extends Command {
      * checks if the player is able to commit suicide by calling exit() method
      */
     public String execute() {
+        Tools.consoleClear();
         if(!revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
             if (exit()){
                 return "hop! ndjfkjdsnfkndsfnsiofndfn (You krilled yourself)";
