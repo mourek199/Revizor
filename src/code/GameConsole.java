@@ -92,7 +92,7 @@ public class GameConsole {
             gameData.loadNpcs(gameMap);
             PassengerBuilder pb = new PassengerBuilder();
             for (Location l:gameMap.getLocations()){
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < l.getInnitPassengerSize(); i++) {
                     l.getPassengers().add(new Passenger());
                 }
             }

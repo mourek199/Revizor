@@ -12,8 +12,28 @@ public class Location {
     private ArrayList<String> npcsPresent;
     private ArrayList<Passenger> passengers;
     private int position;
+    private int innitPassengerSize;
+    private int passengersDone = 0;
+    private double completion = 0;
 
     public Location() {
+    }
+
+    public double getCompletion(){
+        this.completion = Math.round((passengersDone)/((double)innitPassengerSize/100));
+        return this.completion;
+    }
+
+    public String getPercentage(){
+        if (getCompletion() == 100.0){
+            return Tools.color("Yellow"," (DOKONČENA!)");
+        }else {
+            return Tools.color("red"," (" +getCompletion() + "%)");
+        }
+    }
+
+    public void increasePassengersDone(){
+        passengersDone++;
     }
 
     public ArrayList<String> getNpcsPresent() {
@@ -62,6 +82,14 @@ public class Location {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public int getInnitPassengerSize() {
+        return innitPassengerSize;
+    }
+
+    public void setInnitPassengerSize(int innitPassengerSize) {
+        this.innitPassengerSize = innitPassengerSize;
     }
 
     @Override

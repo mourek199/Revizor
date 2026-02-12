@@ -72,8 +72,10 @@ public class PassengerCheck extends Command {
                         PassengerBuilder.identification.get(revizor.getActivePassenger().getUsedId()).getIdType()));
         revizorTerminal();
         if (checkFinished) {
+            gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].increasePassengersDone();
             gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().removeIf(passenger ->
             passenger.equals(revizor.getActivePassenger()));
+
         }
         return "";
     }
@@ -111,6 +113,8 @@ public class PassengerCheck extends Command {
         correctId = PassengerBuilder.identification.get(revizor.getActivePassenger().getUsedId()).getIdType().equals(currentPassengerIdentification.getIdType());
         decideFaith();
         checkResult();
+        Tools.pressEnter();
+        Tools.consoleClear();
     }
 
     /**
@@ -120,15 +124,17 @@ public class PassengerCheck extends Command {
         boolean answered = false;
         while (!answered) {
             System.out.println("Nyní se rozhodni jak se k cestujícímu " + revizor.getActivePassenger() + " zachováš.");
-            System.out.println(Tools.color("Yellow", "1)") + " nechat být a jít dál");
-            System.out.println(Tools.color("Yellow", "2)") + " pokuta");
+            System.out.println(Tools.color("Yellow", "1)") + " \"Doklady máte vpořádku.\"");
+            System.out.println(Tools.color("Yellow", "2)") + " \"Dostaneš pokutu hajzle.\"");
 
             try{
                 switch (sc.nextInt()) {
                     case 1 -> {
-                        if (revizor.getActivePassenger().getUsedId() == 4) {
+                        if (revizor.getActivePassenger().getUsedId() == 3) {
                             crimeIgnored = true;
                             System.out.println(Tools.color("red", "SAKRA! ") + "Měl sem černýmu pasažérovi dát pokutičku.. Achjo to sem blbec");
+                            Tools.pressEnter();
+                            Tools.consoleClear();
                         } else {
                             crimeIgnored = false;
                         }
@@ -137,7 +143,7 @@ public class PassengerCheck extends Command {
                     }
                     case 2 -> {
                         fee();
-                        if (revizor.getActivePassenger().getUsedId() != 4){
+                        if (revizor.getActivePassenger().getUsedId() != 3){
                             unrightfulFee = true;
                         }
                         gaveFee = true;
@@ -238,9 +244,9 @@ public class PassengerCheck extends Command {
         }else if (unrightfulFee){
             System.out.println(Tools.color("red", "Ano, ale chudák si to nezasloužil"));
         }else if (gaveFee){
-            System.out.println(Tools.color("Yellow", "Ano"));
+            System.out.println(Tools.color("Yellow", "Ano. Oprávněně."));
         }else {
-            System.out.println(Tools.color("Yellow", "Ne"));
+            System.out.println(Tools.color("Yellow", "Ne. Není nutno."));
         }
         System.out.println((Tools.color("red",Tools.line(50))));
         System.out.print("•Zisk za kontrolu: ");
@@ -254,6 +260,13 @@ public class PassengerCheck extends Command {
         }else {
             System.out.println(Tools.color("Red", "---"));
         }
+        System.out.print("•Zisk celkem: ");
+            if (totalMoney >=0){
+                System.out.println(Tools.color("Yellow", totalMoney + "kč"));
+            }else {
+                System.out.println(Tools.color("Red", totalMoney + "kč"));
+            }
+
         System.out.println((Tools.color("red",Tools.line(50))));
         System.out.print("•Zhoršení psychického stavu o: ");
         if (totalDepression != 0){
