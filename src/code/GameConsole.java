@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * This class is used for typing and executing commands.
+ * @author Tony
  */
 public class GameConsole {
 

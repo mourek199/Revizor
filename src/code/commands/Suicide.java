@@ -5,6 +5,7 @@ import code.Tools;
 
 /**
  * This command lets player end the game early by commiting suicide
+ * @author Tony
  */
 public class Suicide extends Command {
 
@@ -27,7 +28,6 @@ public class Suicide extends Command {
 
     /**
      * calculates if the player is able to commit the action depending on depression status and location
-     * @return
      */
     @Override
     public boolean exit() {

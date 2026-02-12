@@ -5,6 +5,7 @@ import code.Tools;
 
 /**
  * Command used to tell status and heal depression
+ * @author Tony
  */
 public class Psychologist extends Command {
     private Revizor revizor;

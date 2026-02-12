@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 /**
  * Command used for traveling from station to station
+ * @author Tony
  */
 public class Move extends Command {
     private Revizor revizor;
@@ -25,6 +26,7 @@ public class Move extends Command {
 
     /**
      * Lets player choose a station where to relocate themselves
+     *
      * @return current traveling status
      */
     @Override
@@ -34,56 +36,56 @@ public class Move extends Command {
         if (!revizor.isTravelling()) {
             int desiredLocation = 0;
             boolean answered = false;
-                availableStations();
-                System.out.println("Vyber si stanici, na kterou chceš cestovat (číslo) : ");
-                while (!answered) {
-                    try{
-                        desiredLocation = scMove.nextInt();
-                        answered = true;
-                    }catch (InputMismatchException e){
-                        Tools.invalidInput();
-                        scMove.nextLine();
-                    }
-                }
-
-                if (desiredLocation != revizor.getCurrentLocation().getPosition()) {
-                    revizor.setHeadingLocation(gameMap.getLocations()[desiredLocation]);
+            availableStations();
+            System.out.println("Vyber si stanici, na kterou chceš cestovat (číslo) : ");
+            while (!answered) {
+                try {
+                    desiredLocation = scMove.nextInt();
+                    answered = true;
+                } catch (InputMismatchException e) {
+                    Tools.invalidInput();
                     scMove.nextLine();
-                    revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
-                    revizor.setCurrentLocation(gameMap.getLocations()[0]);
                 }
-                Tools.consoleClear();
-                if (revizor.isTravelling()) {
-                    System.out.println(Tools.color("blue", "\"" + revizor.getCurrentLocation().getWelcomeMessage() + "\""));
-                }
-                return revizor.situation();
+            }
 
-
-            } else {
+            if (desiredLocation != revizor.getCurrentLocation().getPosition()) {
+                revizor.setHeadingLocation(gameMap.getLocations()[desiredLocation]);
+                scMove.nextLine();
+                revizor.setRideTime(Math.abs((revizor.getCurrentLocation().getPosition() - revizor.getHeadingLocation().getPosition())));
+                revizor.setCurrentLocation(gameMap.getLocations()[0]);
+            }
             Tools.consoleClear();
-            return Tools.color("red", "NYNÍ NELZE CESTOVAT. VYČKEJ NA PŘÍJEZD DO STANICE");}
+            if (revizor.isTravelling()) {
+                System.out.println(Tools.color("blue", "\"" + revizor.getCurrentLocation().getWelcomeMessage() + "\""));
+            }
+            return revizor.situation();
+
+        } else {
+            Tools.consoleClear();
+            return Tools.color("red", "NYNÍ NELZE CESTOVAT. VYČKEJ NA PŘÍJEZD DO STANICE");
+        }
     }
 
     /**
      * prints the list of available stations
      */
-    public void availableStations(){
+    public void availableStations() {
         //region availableStationsPrint
         Tools.consoleClear();
         Location[] dirLetnany = Arrays.copyOfRange(gameMap.getLocations(), 1, revizor.getCurrentLocation().getPosition());
         Location[] dirIpak = Arrays.copyOfRange(gameMap.getLocations(), revizor.getCurrentLocation().getPosition() + 1, gameMap.getLocations().length);
-        System.out.println(Tools.color("red", Tools.line(35)));
+        System.out.println(Tools.color("red", Tools.line(45)));
         for (int i = 0; i < dirLetnany.length; i++) {
-            System.out.printf("%-30s %-8s%n",dirLetnany[i].getPosition() + ") " + dirLetnany[i].getName(), dirLetnany[i].getPercentage());
+            System.out.printf("%-30s %-8s%n", dirLetnany[i].getPosition() + ") " + dirLetnany[i].getName(), dirLetnany[i].getPercentage());
         }
         System.out.println(Tools.color("red", "^^^"));
-        System.out.printf("%-30s %-8s%n", revizor.getCurrentLocation().getPosition() + ") " + revizor.getCurrentLocation().getName(), revizor.getCurrentLocation().getPercentage() );
+        System.out.printf("%-30s %-8s%n", revizor.getCurrentLocation().getPosition() + ") " + revizor.getCurrentLocation().getName(), revizor.getCurrentLocation().getPercentage());
 
         System.out.println(Tools.color("red", "VVV"));
         for (int i = 0; i < dirIpak.length; i++) {
-            System.out.printf("%-30s %-8s%n",dirIpak[i].getPosition() + ") " + dirIpak[i].getName(), dirIpak[i].getPercentage());
+            System.out.printf("%-30s %-8s%n", dirIpak[i].getPosition() + ") " + dirIpak[i].getName(), dirIpak[i].getPercentage());
         }
-        System.out.println(Tools.color("red", Tools.line(35)));
+        System.out.println(Tools.color("red", Tools.line(45)));
         //endregion
     }
 

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 /**
  * This class stores all game locations, items and characters
+ * @author Tony
  */
 public class GameMap {
     private Location[] locations;

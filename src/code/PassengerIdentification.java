@@ -2,6 +2,7 @@ package code;
 
 /**
  * Each passenger has their identification document
+ * @author Tony
  */
 public class PassengerIdentification {
     private String idType;

@@ -2,6 +2,10 @@ package code;
 
 import java.util.ArrayList;
 
+/**
+ * Revizor/Player class. This class stores necessary player data and functions
+ * @author Tony
+ */
 public class Revizor {
     private GameMap gameMap;
     private Location currentLocation;
@@ -55,6 +59,7 @@ public class Revizor {
     public String consumeItem(String itemName) {
         if (items.contains(gameMap.getItems().get(itemName))) {
             depression += gameMap.getItems().get(itemName).getDepressionChange();
+            System.out.println(gameMap.getItems().get(itemName).getConsumeMessage());
             items.remove(gameMap.getItems().get(itemName));
             return "Použil jsi/sežral " + Tools.color("blue", itemName);
         }

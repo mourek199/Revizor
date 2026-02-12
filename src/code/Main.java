@@ -2,6 +2,7 @@ package code;
 
 /**
  * It's a main class
+ * @author Tony
  */
 public class Main {
     public static void main(String[] args) {

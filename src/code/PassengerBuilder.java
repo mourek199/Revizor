@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 /**
  * This class is used for storing available information that a passenger can earn
+ * @author Tony
  */
 public class PassengerBuilder {
     public static ArrayList<String> ManNames;

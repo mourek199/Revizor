@@ -2,6 +2,8 @@
   {
     "name" : "Filip",
     "welcomeMessage" : "Zdaaaar, na, tu máš",
-    "description" : "Narozdíl od ostatních podivínů, kteří každý den rozdávají literární trhák\n zvaný “deník metro” je Filip přátelský a ochotný s vámi mluvit."
+    "goodbyeMessage" : "Hele sorry, ale budu muset jít.",
+    "description" : "Narozdíl od ostatních podivínů, kteří každý den rozdávají literární trhák\n zvaný “deník metro” je Filip přátelský a ochotný s vámi mluvit.",
+    "characterItem" : "Deník Metro"
   }
 ]

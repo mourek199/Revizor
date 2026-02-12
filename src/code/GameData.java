@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * This class is used for loading stuff
+ * @author Tony
  */
 public class GameData {
 

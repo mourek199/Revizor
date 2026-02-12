@@ -8,6 +8,10 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Class with all the passenger-checking logic
+ * @author Tony
+ */
 public class PassengerCheck extends Command {
 
     private final Revizor revizor;
@@ -125,7 +129,7 @@ public class PassengerCheck extends Command {
         while (!answered) {
             System.out.println("Nyní se rozhodni jak se k cestujícímu " + revizor.getActivePassenger() + " zachováš.");
             System.out.println(Tools.color("Yellow", "1)") + " \"Doklady máte vpořádku.\"");
-            System.out.println(Tools.color("Yellow", "2)") + " \"Dostaneš pokutu hajzle.\"");
+            System.out.println(Tools.color("Yellow", "2)") + " \"Dostaneš pokutu, ty hajzle.\"");
 
             try{
                 switch (sc.nextInt()) {

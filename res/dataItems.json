@@ -1,10 +1,10 @@
 [
   {
     "name" : "bageta",
-    "description" : "",
+    "description" : "Lze sežrat. ",
     "consumeMessage" : "mnaaam",
     "cost" : 65,
-    "depressionChange" : -3,
+    "depressionChange" : -5,
     "consumable" : true
   },
   {
@@ -12,7 +12,15 @@
     "description" : "no nekup to",
     "consumeMessage" : "mnaaam",
     "cost" : 999,
-    "depressionChange" : -30,
+    "depressionChange" : -999,
+    "consumable" : true
+  },
+  {
+    "name" : "Deník Metro",
+    "description" : "no nekup to",
+    "consumeMessage" : "Listuju novinama... ježiš tady toho je... \nSudoku? To luštit neumim.\nKriste... těch reklam tady...\nNe opravdu nemám zájem koupit si palandu...\nPrej budou volby?? Hm. Ok. \nNevim co si o tomhle kusu papíru mam myslet...",
+    "cost" : 999,
+    "depressionChange" : -999,
     "consumable" : true
   }
 ]

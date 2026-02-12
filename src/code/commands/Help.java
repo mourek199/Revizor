@@ -2,6 +2,10 @@ package code.commands;
 
 import code.Tools;
 
+/**
+ * Has a list of all available commands
+ * @author Tony
+ */
 public class Help extends Command {
 
     public Help() {

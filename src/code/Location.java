@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  *A location which can be visited by player
+ * @author Tony
  */
 public class Location {
     private String name;
@@ -26,8 +27,10 @@ public class Location {
 
     public String getPercentage(){
         if (getCompletion() == 100.0){
-            return Tools.color("Yellow"," (DOKONČENA!)");
-        }else {
+            return Tools.color("Green"," (DOKONČENA!)");
+        }else if(getCompletion()>0.0){
+            return Tools.color("yellow"," (" +getCompletion() + "%)");
+        }else{
             return Tools.color("red"," (" +getCompletion() + "%)");
         }
     }

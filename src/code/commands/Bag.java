@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 /**
  * It's a backpack
+ * @author Tony
  */
 public class Bag extends Command {
 
@@ -21,6 +22,7 @@ public class Bag extends Command {
 
     /**
      * prints the contents of players inventory and lets player interact with items and consume consumable items
+     *
      * @return it doesn't
      */
     @Override
@@ -50,7 +52,7 @@ public class Bag extends Command {
 
             Tools.consoleClear();
             System.out.println(Tools.color("blue", tempItem.getName()) + " - " + tempItem.getDescription() + "\n");
-            if (tempItem.isConsumable()){
+            if (tempItem.isConsumable()) {
                 System.out.println("Tento předmět vypadá, že se dá sníst. \nPřeješ si sníst " + Tools.color("blue", tempItem.getName()) + " ?" + Tools.yesNo());
                 boolean answered2 = false;
                 String input;
@@ -59,6 +61,7 @@ public class Bag extends Command {
                     if (input.equalsIgnoreCase("A")) {
                         Tools.consoleClear();
                         System.out.println(revizor.consumeItem(tempItem.getName()));
+                        Tools.pressEnter();
                         answered2 = true;
                     } else if (input.equalsIgnoreCase("N")) {
                         Tools.consoleClear();
@@ -84,11 +87,11 @@ public class Bag extends Command {
         return "";
     }
 
-    public void wallet(){
+    public void wallet() {
         System.out.print("Tvoje peníze: ");
-        if (revizor.getMoney()>=0){
-            System.out.println(Tools.color("yellow",(revizor.getMoney()) + "kč"));
-        }else {
+        if (revizor.getMoney() >= 0) {
+            System.out.println(Tools.color("yellow", (revizor.getMoney()) + "kč"));
+        } else {
             System.out.println(Tools.color("red", (revizor.getMoney()) + "kč"));
         }
 

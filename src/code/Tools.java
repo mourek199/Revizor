@@ -2,6 +2,9 @@ package code;
 
 import java.util.Scanner;
 
+/**
+ * This class offers some handful tools. Mostly printing methods.
+ */
 public class Tools {
 
     static Scanner sc = new Scanner(System.in);

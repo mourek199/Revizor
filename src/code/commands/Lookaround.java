@@ -6,6 +6,7 @@ import code.Tools;
 
 /**
  * Used to give the player a description of the current location they're in
+ * @author Tony
  */
 public class Lookaround extends Command {
     private Revizor revizor;
