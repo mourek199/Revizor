@@ -3,6 +3,12 @@ package commands;
 import code.Revizor;
 import code.Tools;
 
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  * This command lets player end the game early by commiting suicide
  * @author Tony
@@ -19,7 +25,10 @@ public class Suicide extends Command {
         Tools.consoleClear();
         if(!revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
             if (exit()){
-                return "hop! ndjfkjdsnfkndsfnsiofndfn (You krilled yourself)";
+                System.out.println("poslední slova: ");
+                sayLastWords();
+                Tools.consoleClear();
+                return "Hop!\n" + Tools.color("red", "Vdhebxjndsndjbdjddjucdhnsxnxjjss...");
             } else return "Hm.. To by bylo zajímavý no, ale nemůžu skočit pod metro.. to nám v DPP přísně zakázali";
         }else {
             return  "Asi jen težko budu skákat pod koleje zevnitř metra...";
@@ -31,9 +40,24 @@ public class Suicide extends Command {
      */
     @Override
     public boolean exit() {
-        if (revizor.getDepression() > 30 && !revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
+        if (revizor.getDepression() > 250 && !revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
             return true;
         } else return false;
+    }
+
+    public void sayLastWords(){
+
+        try{
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("res/LastWords.txt", true));
+            Scanner sc = new Scanner(System.in);
+            bufferedWriter.newLine();
+            bufferedWriter.write(sc.nextLine());
+            bufferedWriter.flush();
+        }catch (FileNotFoundException e){
+            System.out.println(Tools.color("red", "CHYBA SOUBORU 1"));
+        } catch (IOException e) {
+            System.out.println(Tools.color("red", "CHYBA SOUBORU 2"));
+        }
     }
 
 

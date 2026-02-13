@@ -29,7 +29,7 @@ public class Bag extends Command {
     public String execute() {
         Tools.consoleClear();
         System.out.println(Tools.color("red", Tools.line(100)));
-        wallet();
+        System.out.println(wallet());
         System.out.println(Tools.color("red", Tools.line(100)));
         if (!revizor.getItems().isEmpty()) {
             System.out.println("Ve tvé revizorské brašně se nachází tyto předměty:");

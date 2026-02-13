@@ -126,4 +126,14 @@ public class GameData {
         }
         return loadedManLastNames;
     }
+
+    public static ArrayList<String> poem() throws IOException {
+        ArrayList<String> poem = new ArrayList<>();
+        String currentLine = "";
+        BufferedReader br = new BufferedReader(new FileReader("res/poem.txt"));
+        while((currentLine = br.readLine()) != null) {
+            poem.add(currentLine);
+        }
+        return poem;
+    }
 }

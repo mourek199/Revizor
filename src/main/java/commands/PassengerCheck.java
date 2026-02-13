@@ -1,8 +1,6 @@
 package commands;
 
 import code.*;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -16,6 +14,7 @@ public class PassengerCheck extends Command {
 
     private final Revizor revizor;
     private final GameMap gameMap;
+    private final Wait wait;
     private final Random rd;
     private final Scanner sc;
     private final ArrayList<String> terminalColors;
@@ -29,6 +28,7 @@ public class PassengerCheck extends Command {
     public PassengerCheck(code.Revizor revizor, GameMap gameMap) {
         this.revizor = revizor;
         this.gameMap = gameMap;
+        this.wait = new Wait(revizor, gameMap);
         rd = new Random();
         sc = new Scanner(System.in);
         this.terminalColors = new ArrayList<>();
@@ -79,9 +79,11 @@ public class PassengerCheck extends Command {
             gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].increasePassengersDone();
             gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getPassengers().removeIf(passenger ->
             passenger.equals(revizor.getActivePassenger()));
-
         }
-        return "";
+        if (revizor.getCurrentLocation().getName().equalsIgnoreCase("metro")){
+            return wait.execute();
+        }else return "Kontrola provedena";
+
     }
 
     /**
@@ -221,7 +223,7 @@ public class PassengerCheck extends Command {
             totalDepression+=3;
         }
         if (crimeIgnored || unrightfulFee){
-            totalDepression+=150;
+            totalDepression+=100;
         }
         int totalMoney = moneyForCheck + moneyForFee;
         revizor.setMoney(revizor.getMoney() + totalMoney);
@@ -260,13 +262,13 @@ public class PassengerCheck extends Command {
         }
         System.out.print("•Zisk za pokuty: ");
         if (gaveFee){
-            System.out.println(Tools.color("Yellow", moneyForFee + "kč"));
+            System.out.println(Tools.color("Yellow", "+" +moneyForFee + "kč"));
         }else {
             System.out.println(Tools.color("Red", "---"));
         }
         System.out.print("•Zisk celkem: ");
             if (totalMoney >=0){
-                System.out.println(Tools.color("Yellow", totalMoney + "kč"));
+                System.out.println(Tools.color("Yellow", "+" +totalMoney + "kč"));
             }else {
                 System.out.println(Tools.color("Red", totalMoney + "kč"));
             }
@@ -274,7 +276,7 @@ public class PassengerCheck extends Command {
         System.out.println((Tools.color("red",Tools.line(50))));
         System.out.print("•Zhoršení psychického stavu o: ");
         if (totalDepression != 0){
-            System.out.println(Tools.color("red", String.valueOf(totalDepression)));
+            System.out.println(Tools.color("red", "+" + totalDepression));
         }else {
             System.out.println(Tools.color("Yellow", "stav nezměněn"));
         }

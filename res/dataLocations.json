@@ -2,7 +2,7 @@
   {
     "name" : "Metro",
     "welcomeMessage" : "Ukončete prosím výstup a nástup, dveře se zavírají.",
-    "description" : "blablable",
+    "description" : "Souprava metra Siemens M1",
     "passengers" : [],
     "innitPassengerSize" : 15,
     "npcsPresent" : [],

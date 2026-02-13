@@ -78,9 +78,7 @@ public class GameConsole {
 
         loadStuff();
         revizor.setCurrentLocation(gameMap.getLocations()[7]);
-        for (int i = 0; i < 2; i++) {
-            revizor.addItem(gameMap.getItems().get("bageta"));
-        }
+        revizor.addItem(gameMap.getItems().get("bageta"));
     }
 
     /**
@@ -106,7 +104,7 @@ public class GameConsole {
      * Scans for input and executes desired command
      */
     public void execute(){
-        System.out.print(">>");
+        System.out.print("\nZadej příkaz (pro nápovědu napiš pomoc/help)"+Tools.color("red", "\n>>"));
         String inputCommand = sc.next().toLowerCase().trim();
         sc.nextLine();
 
@@ -124,6 +122,7 @@ public class GameConsole {
      */
     public void start(){
         innit();
+        Story.intro();
         do {
             execute();
         } while (!shouldExit);
