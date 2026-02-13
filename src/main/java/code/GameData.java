@@ -16,7 +16,11 @@ public class GameData {
      */
     public void loadMap(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
-        try(InputStream input = new FileInputStream("res/dataLocations.json")) {
+        InputStream input = GameData.class.getResourceAsStream("/dataLocations.json");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        try(input) {
             gameMap.setLocations(mapper.readValue(input, Location[].class));
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -29,7 +33,11 @@ public class GameData {
      */
     public void loadNpcs(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
-        try(InputStream input = new FileInputStream("res/dataNpcs.json")) {
+        InputStream input = GameData.class.getResourceAsStream("/dataNpcs.json");
+        if (input == null){
+            throw new RuntimeException();
+        }
+        try(input) {
             Npc[] npcs = mapper.readValue(input, Npc[].class);
             for(Npc npc : npcs) {
                 gameMap.getNpcs().put(npc.getName(), npc);
@@ -45,7 +53,11 @@ public class GameData {
      */
     public void loadItems(GameMap gameMap) {
         ObjectMapper mapper = new ObjectMapper();
-        try(InputStream input = new FileInputStream("res/dataItems.json")) {
+        InputStream input = GameData.class.getResourceAsStream("/dataItems.json");
+        if (input == null){
+            throw new RuntimeException();
+        }
+        try(input) {
             Item[] items = mapper.readValue(input, Item[].class);
             for(Item item : items) {
                 gameMap.getItems().put(item.getName(), item);
