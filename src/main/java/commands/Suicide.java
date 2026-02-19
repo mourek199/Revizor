@@ -52,7 +52,7 @@ public class Suicide extends Command {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("res/LastWords.txt", true));
             Scanner sc = new Scanner(System.in);
             bufferedWriter.newLine();
-            bufferedWriter.write(sc.nextLine());
+            bufferedWriter.write("\"" + sc.nextLine() + "\" - "+revizor.getName());
             bufferedWriter.flush();
         }catch (FileNotFoundException e){
             System.out.println(Tools.color("red", "CHYBA SOUBORU 1"));

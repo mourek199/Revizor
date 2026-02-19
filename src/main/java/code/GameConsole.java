@@ -119,15 +119,19 @@ public class GameConsole {
     }
 
     public String setUsername(){
-        Tools.line(50);
+        Tools.consoleClear();
+        System.out.println(Tools.color("red", Tools.line(50)));
+        System.out.print("Zadej křestní jméno svého revizora: ");
         pickedName = sc.next();
         sc.nextLine();
+        return pickedName;
     }
     /**
      * The whole game cycle. The cycle ends if any called command's exit method returns true
      */
     public void start(){
         innit();
+        revizor.setName(setUsername());
         Story.intro();
         do {
             execute();
