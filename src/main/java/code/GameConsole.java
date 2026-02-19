@@ -16,13 +16,14 @@ public class GameConsole {
     private GameMap gameMap = new GameMap();
     private Revizor revizor;
     private HashMap<String, Command> availableCommands;
+    private String pickedName = "bezejmenný";
     private boolean shouldExit;
 
     public GameConsole() {
         shouldExit = false;
         availableCommands = new HashMap<>();
         sc = new Scanner(System.in);
-        revizor = new Revizor("Tonyyy", gameMap);
+        revizor = new Revizor(pickedName, gameMap);
     }
 
 
@@ -117,6 +118,11 @@ public class GameConsole {
         }
     }
 
+    public String setUsername(){
+        Tools.line(50);
+        pickedName = sc.next();
+        sc.nextLine();
+    }
     /**
      * The whole game cycle. The cycle ends if any called command's exit method returns true
      */
@@ -125,6 +131,12 @@ public class GameConsole {
         Story.intro();
         do {
             execute();
-        } while (!shouldExit);
+        } while (!shouldExit && !gameMap.mapCompleted());
+        if (gameMap.mapCompleted()){
+            Story.victory();
+        }else {
+            Story.altVictory();
+        }
     }
+
 }

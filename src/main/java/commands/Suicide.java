@@ -1,6 +1,7 @@
 package commands;
 
 import code.Revizor;
+import code.Story;
 import code.Tools;
 
 import java.io.BufferedWriter;
@@ -27,8 +28,8 @@ public class Suicide extends Command {
             if (exit()){
                 System.out.println("poslední slova: ");
                 sayLastWords();
-                Tools.consoleClear();
-                return "Hop!\n" + Tools.color("red", "Vdhebxjndsndjbdjddjucdhnsxnxjjss...");
+                Story.altVictory();
+                return "";
             } else return "Hm.. To by bylo zajímavý no, ale nemůžu skočit pod metro.. to nám v DPP přísně zakázali";
         }else {
             return  "Asi jen težko budu skákat pod koleje zevnitř metra...";

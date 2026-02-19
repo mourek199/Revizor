@@ -34,6 +34,13 @@ public class Location {
         }
     }
 
+    /**
+     * @return if all the present passengers have been checked
+     */
+    public boolean isComplete(){
+        return getCompletion() == 100.0;
+    }
+
     public void increasePassengersDone(){
         passengersDone++;
     }

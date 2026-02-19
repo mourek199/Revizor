@@ -17,6 +17,20 @@ public class GameMap {
         npcs = new HashMap<>();
     }
 
+    /**
+     *
+     * @return whether all stations in the game are completed
+     */
+    public boolean mapCompleted(){
+        for (Location location : locations){
+            if (!location.isComplete() && !location.getName().equalsIgnoreCase("metro")){
+                return false;
+            }
+        }
+        return true;
+
+    }
+
     public Location[] getLocations() {
         return locations;
     }

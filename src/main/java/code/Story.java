@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Story, intro, poem and endings
+ */
 public class Story {
     public static ArrayList<String> poem;
     public static Scanner scStory = new Scanner(System.in);
@@ -36,5 +39,25 @@ public class Story {
             Story.scStory.nextLine();
             System.out.print(Tools.color("Yellow",poem.get(i)));
         }
+    }
+
+    public static void victory(){
+        Tools.consoleClear();
+        System.out.println("No ježiši kriste já sem vyřízenej...\n" +
+                "...\n" +
+                "KONEČNĚ SEM VOLNEJ!\n" +
+                "ANOOO!\n" +
+                "UŽ NIC NEMUSIM!\n" +
+                "ANOOO!\n" +
+                "\n" +
+                "Revizor úspěšně odpracoval dnešní den a zaplatil přibližně 1,2% svého dluhu.\n" +
+                "Má radost protože může jít domů, nicméně jeho blbé hlavě revizorské nedochází,\n" +
+                "že po zbytek roku musí stále chodit do práce. To už nás ovšem příliš nezajímá. \n" +
+                Tools.color("Green", "KONEC HRY - VÝHRA"));
+    }
+
+    public static void altVictory(){
+        Tools.consoleClear();
+        System.out.println("Hop!\n" + Tools.color("red", "Vdhebxjndsndjbdjddjucdhnsxnxjjss..."));
     }
 }

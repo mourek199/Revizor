@@ -16,7 +16,7 @@ public class Revizor {
     private String name;
     private int capacity = 5;
     private int money = 0;
-    private int depression = 3;
+    private int depression = 999;
     private int timeElapsed = 0;
     private int rideTime = 0;
 
@@ -109,6 +109,10 @@ public class Revizor {
 
     public void setDepression(int depression) {
         this.depression = depression;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setCurrentLocation(Location currentLocation) {

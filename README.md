@@ -26,7 +26,7 @@ talk/mluv -> nabídne dostupné postavy se kterýmy lze hovořit
 jump/skok -> pokus o sebevraždu 
 psycho/psycholog -> sdělí aktualní informace o duševním zdraví revizora
 ```
-4. Hra končí v případě, že hráč zkontroluje všechny stanice. 🏆
+4. Hra končí v případě, že hráč zkontroluje všechny stanice. A vydělá dost peněz 🏆
 5. Alternativně hra končí, když revizor spáchá sebevraždu. 🏆
 
 ## 🚇 "konečná stanice, prosíme, vystupte"
