@@ -16,7 +16,7 @@ public class Revizor {
     private String name;
     private int capacity = 5;
     private int money = 0;
-    private int depression = 5;
+    private int depression = 3;
     private int timeElapsed = 0;
     private int rideTime = 0;
 
@@ -33,11 +33,11 @@ public class Revizor {
      * @param item Defines what item is added to player's inventory
      * @return whether the item was succesfully added
      */
-    public boolean addItem(Item item) {
+    public String addItem(Item item) {
         if (items.size()+1 <= capacity) {
             items.add(item);
-            return true;
-        }else return false;
+            return "Obdržel jsi " + Tools.color("Yellow", "+1 " + item.getName());
+        }else return "Máš plný inventář ("+Tools.color("red",items.size() + "/" + capacity)+") a předmět "+ Tools.color("red", item.getName()) + " nemůžeš sebrat.";
     }
 
     /**

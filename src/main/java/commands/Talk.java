@@ -27,7 +27,7 @@ public class Talk extends Command {
     @Override
     public String execute() {
         Tools.consoleClear();
-        if (revizor.getCurrentLocation().getNpcsPresent()!=null) {
+        if (!revizor.getCurrentLocation().getNpcsPresent().isEmpty()) {
             System.out.println("Na " + Tools.color("blue", revizor.getCurrentLocation().getName()) + " Se kromě cestujících nachází i tyto postavy. Zadej jméno se kterým chceš mluvit: ");
             for (int i = 0; i < revizor.getCurrentLocation().getNpcsPresent().size(); i++) {
                 System.out.println("•" + revizor.getCurrentLocation().getNpcsPresent().get(i) );
@@ -39,19 +39,21 @@ public class Talk extends Command {
                 if(gameMap.getNpcs().containsKey(input)) {
                     revizor.setActiveNpc(gameMap.getNpcs().get(input));
                     Tools.consoleClear();
-                    System.out.println(revizor.getActiveNpc().getWelcomeMessage());
-                    revizor.addItem(gameMap.getItems().get(revizor.getActiveNpc().getCharacterItem()));
+                    revizor.getActiveNpc().talk(revizor, gameMap);
                     gameMap.getLocations()[revizor.getCurrentLocation().getPosition()].getNpcsPresent().remove(revizor.getActiveNpc().getName());
+                    revizor.setCurrentLocation(gameMap.getLocations()[revizor.getCurrentLocation().getPosition()]);
+                    revizor.setActiveNpc(null);
+
+
+
                     answered = true;
                 }else{
                     System.out.println(Tools.color("red", "ŠPATNĚ ZADANÉ JMÉNO, ZKUS TO ZNOVU"));
                 }
             }
         }else{
-            System.out.println("V této lokaci nevidíš nikoho s kým bys mohl pokecat");
+            System.out.print("V této lokaci nevidíš nikoho s kým bys mohl pokecat");
         }
-        Tools.pressEnter();
-        Tools.consoleClear();
         return "";
     }
 

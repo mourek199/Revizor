@@ -11,6 +11,17 @@ public class Npc {
     private String description;
     private String characterItem;
 
+    public void talk(Revizor revizor, GameMap gameMap){
+        System.out.println(Tools.color("blue", "\""+this.welcomeMessage+"\""));
+        Tools.lineSkip(1);
+        System.out.println(revizor.addItem(gameMap.getItems().get(this.getCharacterItem())));
+        Tools.pressEnter();
+        Tools.consoleClear();
+        System.out.println(Tools.color("blue", "\""+this.goodbyeMessage+"\""));
+        Tools.pressEnter();
+        Tools.consoleClear();
+    }
+
 
     public Npc() {
     }

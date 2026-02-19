@@ -61,7 +61,6 @@ public class Bag extends Command {
                     if (input.equalsIgnoreCase("A")) {
                         Tools.consoleClear();
                         System.out.println(revizor.consumeItem(tempItem.getName()));
-                        Tools.pressEnter();
                         answered2 = true;
                     } else if (input.equalsIgnoreCase("N")) {
                         Tools.consoleClear();

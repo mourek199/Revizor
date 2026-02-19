@@ -24,7 +24,7 @@ public class Help extends Command {
                 "\n  •check/kontrola -> zahájí kontrolu dokladů okolních cestujících" +
                 "\n  •talk/mluv -> nabídne dostupné postavy se kterýmy lze hovořit" +
                 "\n  •jump/skok -> pokus o sebevraždu" +
-                "\n  •psycholog -> sdělí aktualní informace o duševním zdraví revizora" +
+                "\n  •psycho/psycholog -> sdělí aktualní informace o duševním zdraví revizora" +
                 "\n"+Tools.color("red", Tools.line(50));
     }
 
