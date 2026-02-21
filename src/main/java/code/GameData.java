@@ -74,10 +74,15 @@ public class GameData {
      */
     public static ArrayList<String> loadManNames() throws IOException {
         ArrayList<String> loadedManNames = new ArrayList<>();
-        String currentLine = "";
-        BufferedReader br = new BufferedReader(new FileReader("res/manNames.txt"));
-        while((currentLine = br.readLine()) != null) {
-            loadedManNames.add(currentLine);
+        InputStream input = GameData.class.getResourceAsStream("/manNames.txt");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(input));
+        String line = "";
+        while(line!=null){
+            line = br.readLine();
+            loadedManNames.add(line);
         }
         return loadedManNames;
     }
@@ -89,10 +94,15 @@ public class GameData {
      */
     public static ArrayList<String> loadWomanNames() throws IOException {
         ArrayList<String> loadedWomanNames = new ArrayList<>();
-        String currentLine = "";
-        BufferedReader br = new BufferedReader(new FileReader("res/womanNames.txt"));
-        while((currentLine = br.readLine()) != null) {
-            loadedWomanNames.add(currentLine);
+        InputStream input = GameData.class.getResourceAsStream("/womanNames.txt");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(input));
+        String line = "";
+        while(line!=null){
+            line = br.readLine();
+            loadedWomanNames.add(line);
         }
         return loadedWomanNames;
     }
@@ -104,10 +114,15 @@ public class GameData {
      */
     public static ArrayList<String> loadWomanLastNames() throws IOException {
         ArrayList<String> loadedWomanLastNames = new ArrayList<>();
-        String currentLine = "";
-        BufferedReader br = new BufferedReader(new FileReader("res/womanLastnames.txt"));
-        while((currentLine = br.readLine()) != null) {
-            loadedWomanLastNames.add(currentLine);
+        InputStream input = GameData.class.getResourceAsStream("/womanLastnames.txt");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(input));
+        String line = "";
+        while(line!=null){
+            line = br.readLine();
+            loadedWomanLastNames.add(line);
         }
         return loadedWomanLastNames;
     }
@@ -119,20 +134,30 @@ public class GameData {
      */
     public static ArrayList<String> loadManLastNames() throws IOException {
         ArrayList<String> loadedManLastNames = new ArrayList<>();
-        String currentLine = "";
-        BufferedReader br = new BufferedReader(new FileReader("res/manLastnames.txt"));
-        while((currentLine = br.readLine()) != null) {
-            loadedManLastNames.add(currentLine);
+        InputStream input = GameData.class.getResourceAsStream("/manLastnames.txt");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(input));
+        String line = "";
+        while(line!=null){
+            line = br.readLine();
+            loadedManLastNames.add(line);
         }
         return loadedManLastNames;
     }
 
     public static ArrayList<String> poem() throws IOException {
         ArrayList<String> poem = new ArrayList<>();
-        String currentLine = "";
-        BufferedReader br = new BufferedReader(new FileReader("res/poem.txt"));
-        while((currentLine = br.readLine()) != null) {
-            poem.add(currentLine);
+        InputStream input = GameData.class.getResourceAsStream("/poem.txt");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(input));
+        String line = "";
+        while(line!=null){
+            line = br.readLine();
+            poem.add(line);
         }
         return poem;
     }

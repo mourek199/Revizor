@@ -5,9 +5,13 @@ a provádíte kontrolu jízdních dokladů. Hlídáte také psychický stav
 revizora, protože ovlivňuje kolik peněz vyděláváte.
 
 ## ▶️ Jak hru spustit
-1. Stáhněte si hru jako JAR soubor.
-2. Otevřete terminál ve stejné složce jako hru.
-3. Zadejte do terminálu následující příkaz:  
+1. Předtím než začnete, stáhněte si do počítače [Java 25](https://download.oracle.com/java/25/latest/jdk-25_windows-x64_bin.exe).
+2. Stáhněte si hru jako JAR soubor.
+2. Otevřete terminál ve stejné složce jako hru (zadáním ```cmd``` do adresového řádku).
+3. Než spustíte hru, zadejte do otevřeného terminálu  
+tento příkaz: (pro správné fungování vzhledu hry)  
+```chcp 65001```
+3. Poté zadejte do terminálu následující příkaz, čímž spustíte hru:  
 ```java - jar Revizor.jar```
 
 ## 🎮 Jak hrát

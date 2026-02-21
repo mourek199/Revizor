@@ -17,10 +17,10 @@ public class PassengerBuilder {
 
     public PassengerBuilder() {
         try {
-            this.ManNames = GameData.loadManNames();
-            this.ManLastNames = GameData.loadManLastNames();
-            this.WomanNames = GameData.loadWomanNames();
-            this.WomanLastnames = GameData.loadWomanLastNames();
+            ManNames = GameData.loadManNames();
+            ManLastNames = GameData.loadManLastNames();
+            WomanNames = GameData.loadWomanNames();
+            WomanLastnames = GameData.loadWomanLastNames();
             identification = new HashMap<>();
             identification.put(0, new PassengerIdentification("Mobilní aplikace PID Lítačka", "green", 3));
             identification.put(1, new PassengerIdentification("Fyzická kartička PID Lítačka", "blue", 3));
